@@ -1,0 +1,35 @@
+
+PODS:
+- AHEasing (1.0)
+- HTAutocompleteTextField (1.0.1)
+- HTDelegateProxy (0.0.3)
+- HTGradientEasing (0.0.4):
+  - AHEasing
+  - UIColor-CrossFade
+- HTStateAwareRasterImageView (1.1.1):
+  - JJCachedAsyncViewDrawing
+- JJCachedAsyncViewDrawing (0.0.1)
+- SFObservers (0.0.1)
+- UIColor-CrossFade (0.0.1)
+- UIViewPlusPosition (0.0.1)
+
+DEPENDENCIES:
+- HTAutocompleteTextField
+- HTDelegateProxy
+- HTGradientEasing
+- HTStateAwareRasterImageView
+- SFObservers
+- UIViewPlusPosition
+
+SPEC CHECKSUMS:
+  AHEasing: 6f0a6e894ad0ce2d49013bf4123b313de91474fd
+  HTAutocompleteTextField: 7c47560f1d359cdce72e08cb36acf6a0cf43972d
+  HTDelegateProxy: f01c6deb2d9850172502a694a7cb7d47b9ed3d3f
+  HTGradientEasing: e764de9c1790b8957f8987fb543246a76ea06bc4
+  HTStateAwareRasterImageView: 00d535ba01c143cdb25bbe0b4c1d5e623329fae6
+  JJCachedAsyncViewDrawing: 6ebb56c4b4c3242469015ac5de99af75e6360d4a
+  SFObservers: 6af8ee6b52f7408dfe4096615e84b671084ffa6a
+  UIColor-CrossFade: afd26f1e60caa96184b0e894736b38039507c46e
+  UIViewPlusPosition: a8ad14dee4736a0070c52ab63da38c4dd18930d7
+
+COCOAPODS: 0.16.4

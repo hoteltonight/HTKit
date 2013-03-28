@@ -1,0 +1,10 @@
+platform :ios, :deployment_target => '5.0'
+
+xcodeproj 'HTKitDemo'
+
+pod 'HTStateAwareRasterImageView'
+pod 'HTAutocompleteTextField'
+pod 'HTGradientEasing'
+pod 'HTDelegateProxy'
+pod 'SFObservers'
+pod 'UIViewPlusPosition'

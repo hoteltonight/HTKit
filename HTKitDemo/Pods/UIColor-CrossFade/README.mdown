@@ -1,0 +1,45 @@
+UIColor+CrossFade
+=================
+
+UIColor+CrossFade is a UIColor category adding a class method to return a UIColor created by cross fading between the two specified UIColor objects at the specified ratio (between 0.0 and 1.0).
+
+### Using UIColor+CrossFade:
+
+Import UIColor+CrossFade.h, and use as follows:
+
+```objective-c
+UIColor *colorA = [UIColor redColor];
+UIColor *colorB = [UIColor blueColor];
+UIColor *crossFade = [UIColor colorForFadeBetweenFirstColor:colorA secondColor:colorB atRatio:0.5f];
+// crossFade is purple
+```
+
+At a ratio of 0.0f, the result will be fully firstColor.
+At a ratio of 1.0f, the result will be fully secondColor.
+
+Remember - you control the ratio and it doesn't have to be linear! `ratio = powf((1 - value/valueNominal), 0.333f)` is valid as well.
+
+There is also a convenience method that returns an array of crossfaded increments between the specified firstColor and secondColor (thanks peyton!):
+
+```objective-c
+UIColor *colorA = [UIColor redColor];
+UIColor *colorB = [UIColor blueColor];
+NSUInteger steps = 5;
+NSArray *steppedColors = [UIColor colorsForFadeBetweenFirstColor:firstColor lastColor:lastColor inSteps:steps];
+// steppedColors is an NSArray of 5 UIColor objects, crossfaded in steps between firstColor and secondColor
+```
+
+You can also use a version of the convenience function that allows you to define the curve the method uses when calculating your color steps as a block. For example:
+
+```objective-c
+NSArray *steppedColors = [UIColor colorsForFadeBetweenFirstColor:firstColor 
+                                                       lastColor:lastColor
+                                               withRatioEquation:^(float input) {
+                                                     return powf(input, 1/4.0f);
+                                               }
+                                                          inSteps:steps];
+```
+
+See the included UIColorCrossFadeDemo project, which uses the extremely handy InfColorPicker, for further example usage.
+
+If you use this in your app, I'd love to hear about it!
