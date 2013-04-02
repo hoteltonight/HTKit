@@ -100,18 +100,17 @@
 
 - (void)htRasterDidMoveToSuperview
 {
-    [self performSelector:@selector(checkRegisterWithAncestor) withObject:nil afterDelay:0];
     [self htRasterDidMoveToSuperview];
-}
-
-- (void)checkRegisterWithAncestor
-{
     if (![self isKindOfClass:[HTStateAwareRasterImageView class]])
     {
         return;
     }
+    [self performSelector:@selector(checkRegisterWithAncestor) withObject:nil afterDelay:0];
+}
+
+- (void)checkRegisterWithAncestor
+{
     HTStateAwareRasterImageView *firstAncestorRasterImageView = [self firstAncestorRasterizableView].htRasterImageView;
-    NSLog(@"\nDidMoveToSuperview: rasterizableView: %@\n firstAncestorRasterizableView: %@", ((HTStateAwareRasterImageView *)self).rasterizableView, [self firstAncestorRasterizableView]);
     if (firstAncestorRasterImageView)
     {
         [firstAncestorRasterImageView registerDescendantRasterImageView:(HTStateAwareRasterImageView *)self];

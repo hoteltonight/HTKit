@@ -23,6 +23,7 @@
 @property (nonatomic, assign) BOOL implementsCapEdgeInsets;
 @property (nonatomic, strong) NSOperation *drawingOperation;
 @property (nonatomic, strong) NSMutableArray *descendantRasterImageViews;
+@property (nonatomic, strong) UIView<HTRasterizableView> *rasterizableViewAsSubview;
 
 @end
 
@@ -36,6 +37,7 @@
         _kvoEnabled = YES;
         _drawsOnMainThread = YES;
         _descendantRasterImageViews = [NSMutableArray array];
+        _rasterized = YES;
     }
     return self;
 }
@@ -43,15 +45,26 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    if (self.rasterizableView)
+    {
+        [self layoutRasterizableView];
+    }
+    self.rasterizableViewAsSubview.frame = self.bounds;
     [self regenerateImage:nil];
 }
 
 - (void)layoutRasterizableView;
 {
-    if (!(self.implementsUseMinimumSizeForCaps && [self.rasterizableView useMinimumFrameForCaps]))
+    CGSize size = self.bounds.size;
+
+    UIEdgeInsets edgeInsets = [self capEdgeInsets];
+
+    if ([self useMinimumCapSize])
     {
-        self.rasterizableView.frame = self.bounds;
+        size = CGSizeMake(edgeInsets.left + edgeInsets.right + 1, edgeInsets.top + edgeInsets.bottom + 1);
     }
+
+    self.rasterizableView.frame = (CGRect){ .origin = CGPointZero, .size = size };
 }
 
 - (void)dealloc
@@ -61,11 +74,17 @@
     self.delegate = nil;
 }
 
+#pragma mark - Properties
+
 - (void)setRasterizableView:(UIView<HTRasterizableView> *)rasterizableView
 {
     [self removeAllObservers];
     _rasterizableView.htRasterImageView = nil;
     _rasterizableView = rasterizableView;
+    if (!rasterizableView)
+    {
+        return;
+    }
     _rasterizableView.htRasterImageView = self;
     [self layoutRasterizableView];
     
@@ -79,6 +98,30 @@
     }
     [self regenerateImage:nil];
 }
+
+- (void)setRasterized:(BOOL)rasterized
+{
+    if (_rasterized == rasterized)
+    {
+        return;
+    }
+    _rasterized = rasterized;
+    if (rasterized)
+    {
+        [self.rasterizableViewAsSubview removeFromSuperview];
+        self.rasterizableView = self.rasterizableViewAsSubview;
+        self.rasterizableViewAsSubview = nil;
+    }
+    else
+    {
+        self.rasterizableViewAsSubview = self.rasterizableView;
+        [self addSubview:self.rasterizableViewAsSubview];
+        self.rasterizableView = nil;
+        [self setNeedsLayout];
+    }
+}
+
+#pragma mark - Private
 
 - (void)removeAllObservers;
 {
@@ -111,28 +154,34 @@
     [self regenerateImage:nil];
 }
 
+- (UIEdgeInsets)capEdgeInsets
+{
+    UIEdgeInsets edgeInsets = UIEdgeInsetsZero;
+    if (self.implementsCapEdgeInsets)
+    {
+        edgeInsets = [self.rasterizableView capEdgeInsets];
+    }
+    return edgeInsets;
+}
+
+- (BOOL)useMinimumCapSize
+{
+    return self.implementsUseMinimumSizeForCaps && [self.rasterizableView useMinimumFrameForCaps];
+}
+
 - (void)regenerateImage:(HTSARIVVoidBlock)complete
 {
-    CGSize size = self.bounds.size;
-    BOOL useMinimumCapSize = self.implementsUseMinimumSizeForCaps && [self.rasterizableView useMinimumFrameForCaps];
-    if (CGSizeEqualToSize(size, CGSizeZero) && !useMinimumCapSize)
+    if (!self.rasterizableView)
+    {
+        return;
+    }
+    [self layoutRasterizableView];
+    CGSize size = self.rasterizableView.bounds.size;
+    if ((size.width < 1 || size.height < 1) && ![self useMinimumCapSize])
     {
         return;
     }
 
-    UIEdgeInsets edgeInsets = UIEdgeInsetsZero;
-    if (self.implementsCapEdgeInsets)
-    {
-        edgeInsets = [self.rasterizableView capEdgeInsets];        
-    }
-    
-    if (useMinimumCapSize)
-    {
-        size = CGSizeMake(edgeInsets.left + edgeInsets.right + 1, edgeInsets.top + edgeInsets.bottom + 1);
-    }
-    
-    self.rasterizableView.frame = (CGRect){.origin = CGPointZero, .size = size};
-    
     __block NSString *cacheKey = [self cacheKey];
     __unsafe_unretained HTStateAwareRasterImageView *bSelf = self;
 
@@ -167,7 +216,7 @@
         }
         
 #ifdef HT_DEBUG_SAVEFILES
-        NSString *fileName = [NSString stringWithFormat:@"/%@-%u.png", NSStringFromClass([bSelf.rasterizableView class]), [cacheKey hash]];
+        NSString *fileName = [NSString stringWithFormat:@"/%@-%u.jpg", NSStringFromClass([bSelf.rasterizableView class]), [cacheKey hash]];
         NSData *imageData = UIImageJPEGRepresentation(drawnImage, 1);
         NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
                                stringByAppendingPathComponent:fileName];
@@ -182,7 +231,7 @@
                                                                               withCacheKey:cacheKey
                                                                                       size:size
                                                                            backgroundColor:[UIColor clearColor]
-                                                                             capEdgeInsets:edgeInsets
+                                                                             capEdgeInsets:[self capEdgeInsets]
                                                                                  drawBlock:drawBlock
                                                                            completionBlock:completionBlock];
 }

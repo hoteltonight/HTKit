@@ -39,6 +39,8 @@ typedef void (^HTSARIVVoidBlock)();
 @property (nonatomic, assign) BOOL drawsOnMainThread;
 @property (atomic, assign) id<HTStateAwareRasterImageViewDelegate> delegate;
 
+@property (nonatomic, assign) BOOL rasterized; // Default YES, change to NO to add rasterizableView as a subview
+
 - (NSString *)cacheKey;
 - (void)registerDescendantRasterImageView:(HTStateAwareRasterImageView *)descendant;
 - (void)unregisterDescendantRasterImageView:(HTStateAwareRasterImageView *)descendant;
