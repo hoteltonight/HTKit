@@ -2,7 +2,7 @@ platform :ios, :deployment_target => '5.0'
 
 xcodeproj 'HTKitDemo'
 
-pod 'HTStateAwareRasterImageView'
+pod 'HTRasterView'
 pod 'HTAutocompleteTextField'
 pod 'HTGradientEasing'
 pod 'HTDelegateProxy'

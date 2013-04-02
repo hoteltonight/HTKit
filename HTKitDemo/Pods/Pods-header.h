@@ -5,7 +5,7 @@
 #define __POD_HTAutocompleteTextField
 #define __POD_HTDelegateProxy
 #define __POD_HTGradientEasing
-#define __POD_HTStateAwareRasterImageView
+#define __POD_HTRasterView
 #define __POD_JJCachedAsyncViewDrawing
 #define __POD_SFObservers
 #define __POD_UIColor_CrossFade

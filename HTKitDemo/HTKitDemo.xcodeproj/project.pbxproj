@@ -17,14 +17,17 @@
 		1F1CF77716FE66FE004B0218 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F1CF77616FE66FE004B0218 /* Default@2x.png */; };
 		1F1CF77916FE66FE004B0218 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F1CF77816FE66FE004B0218 /* Default-568h@2x.png */; };
 		1F1CF77C16FE66FE004B0218 /* HTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1CF77B16FE66FE004B0218 /* HTViewController.m */; };
+		1F7827D2170AB99D00C2981E /* HTHighlightedShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827CF170AB99D00C2981E /* HTHighlightedShapeView.m */; };
+		1F7827D3170AB99D00C2981E /* UIBezierPath+HTUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827D1170AB99D00C2981E /* UIBezierPath+HTUtilities.m */; };
+		1F7827D6170AB9DC00C2981E /* HTShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827D5170AB9DB00C2981E /* HTShapeView.m */; };
+		1F7827D9170ABB0800C2981E /* HTExampleRasterizableComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827D8170ABB0800C2981E /* HTExampleRasterizableComponent.m */; };
+		1F7827E3170ABB1400C2981E /* HTExampleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827DB170ABB1400C2981E /* HTExampleTableViewController.m */; };
+		1F7827E4170ABB1400C2981E /* HTExampleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827DE170ABB1400C2981E /* HTExampleTableCell.m */; };
+		1F7827E5170ABB1400C2981E /* HTNoRasterizationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827E0170ABB1400C2981E /* HTNoRasterizationCell.m */; };
+		1F7827E6170ABB1400C2981E /* HTCacheKeyCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827E2170ABB1400C2981E /* HTCacheKeyCollector.m */; };
+		1F7827EB170ABB1F00C2981E /* HTGeneratedImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827E8170ABB1F00C2981E /* HTGeneratedImagesViewController.m */; };
+		1F7827EC170ABB1F00C2981E /* HTGeneratedImageTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827EA170ABB1F00C2981E /* HTGeneratedImageTableCell.m */; };
 		1F93B07A16FE944F0028BAC7 /* HTGradientListScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93B07916FE944F0028BAC7 /* HTGradientListScrollView.m */; };
-		1F93B08E16FEA10F0028BAC7 /* HTCacheKeyCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93B08016FEA10F0028BAC7 /* HTCacheKeyCollector.m */; };
-		1F93B08F16FEA10F0028BAC7 /* HTExampleRasterizableComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93B08216FEA10F0028BAC7 /* HTExampleRasterizableComponent.m */; };
-		1F93B09016FEA10F0028BAC7 /* HTExampleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93B08416FEA10F0028BAC7 /* HTExampleTableCell.m */; };
-		1F93B09116FEA10F0028BAC7 /* HTExampleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93B08716FEA10F0028BAC7 /* HTExampleTableViewController.m */; };
-		1F93B09216FEA10F0028BAC7 /* HTGeneratedImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93B08916FEA10F0028BAC7 /* HTGeneratedImagesViewController.m */; };
-		1F93B09316FEA10F0028BAC7 /* HTGeneratedImageTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93B08B16FEA10F0028BAC7 /* HTGeneratedImageTableCell.m */; };
-		1F93B09416FEA10F0028BAC7 /* HTNoRasterizationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93B08D16FEA10F0028BAC7 /* HTNoRasterizationCell.m */; };
 		1F93B09D16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F93B09C16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard */; };
 		1F96265B16FEB0A3007836BB /* HTSARIVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96265A16FEB0A3007836BB /* HTSARIVViewController.m */; };
 		1F96266316FED254007836BB /* HTCarDetailsViewV1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96266216FED254007836BB /* HTCarDetailsViewV1.m */; };
@@ -57,23 +60,29 @@
 		1F1CF77816FE66FE004B0218 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1F1CF77A16FE66FE004B0218 /* HTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTViewController.h; sourceTree = "<group>"; };
 		1F1CF77B16FE66FE004B0218 /* HTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTViewController.m; sourceTree = "<group>"; };
+		1F7827CE170AB99D00C2981E /* HTHighlightedShapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTHighlightedShapeView.h; path = ../../HTHighlightedShapeView.h; sourceTree = "<group>"; };
+		1F7827CF170AB99D00C2981E /* HTHighlightedShapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTHighlightedShapeView.m; path = ../../HTHighlightedShapeView.m; sourceTree = "<group>"; };
+		1F7827D0170AB99D00C2981E /* UIBezierPath+HTUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBezierPath+HTUtilities.h"; path = "../../UIBezierPath+HTUtilities.h"; sourceTree = "<group>"; };
+		1F7827D1170AB99D00C2981E /* UIBezierPath+HTUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBezierPath+HTUtilities.m"; path = "../../UIBezierPath+HTUtilities.m"; sourceTree = "<group>"; };
+		1F7827D4170AB9DB00C2981E /* HTShapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTShapeView.h; path = ../../HTShapeView.h; sourceTree = "<group>"; };
+		1F7827D5170AB9DB00C2981E /* HTShapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTShapeView.m; path = ../../HTShapeView.m; sourceTree = "<group>"; };
+		1F7827D7170ABB0800C2981E /* HTExampleRasterizableComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTExampleRasterizableComponent.h; sourceTree = "<group>"; };
+		1F7827D8170ABB0800C2981E /* HTExampleRasterizableComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTExampleRasterizableComponent.m; sourceTree = "<group>"; };
+		1F7827DA170ABB1400C2981E /* HTExampleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTExampleTableViewController.h; sourceTree = "<group>"; };
+		1F7827DB170ABB1400C2981E /* HTExampleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTExampleTableViewController.m; sourceTree = "<group>"; };
+		1F7827DC170ABB1400C2981E /* HTExampleTableCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTExampleTableCellProtocol.h; sourceTree = "<group>"; };
+		1F7827DD170ABB1400C2981E /* HTExampleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTExampleTableCell.h; sourceTree = "<group>"; };
+		1F7827DE170ABB1400C2981E /* HTExampleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTExampleTableCell.m; sourceTree = "<group>"; };
+		1F7827DF170ABB1400C2981E /* HTNoRasterizationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTNoRasterizationCell.h; sourceTree = "<group>"; };
+		1F7827E0170ABB1400C2981E /* HTNoRasterizationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTNoRasterizationCell.m; sourceTree = "<group>"; };
+		1F7827E1170ABB1400C2981E /* HTCacheKeyCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCacheKeyCollector.h; sourceTree = "<group>"; };
+		1F7827E2170ABB1400C2981E /* HTCacheKeyCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCacheKeyCollector.m; sourceTree = "<group>"; };
+		1F7827E7170ABB1F00C2981E /* HTGeneratedImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTGeneratedImagesViewController.h; sourceTree = "<group>"; };
+		1F7827E8170ABB1F00C2981E /* HTGeneratedImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGeneratedImagesViewController.m; sourceTree = "<group>"; };
+		1F7827E9170ABB1F00C2981E /* HTGeneratedImageTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTGeneratedImageTableCell.h; sourceTree = "<group>"; };
+		1F7827EA170ABB1F00C2981E /* HTGeneratedImageTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGeneratedImageTableCell.m; sourceTree = "<group>"; };
 		1F93B07816FE944F0028BAC7 /* HTGradientListScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTGradientListScrollView.h; sourceTree = "<group>"; };
 		1F93B07916FE944F0028BAC7 /* HTGradientListScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGradientListScrollView.m; sourceTree = "<group>"; };
-		1F93B07F16FEA10F0028BAC7 /* HTCacheKeyCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCacheKeyCollector.h; sourceTree = "<group>"; };
-		1F93B08016FEA10F0028BAC7 /* HTCacheKeyCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCacheKeyCollector.m; sourceTree = "<group>"; };
-		1F93B08116FEA10F0028BAC7 /* HTExampleRasterizableComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTExampleRasterizableComponent.h; sourceTree = "<group>"; };
-		1F93B08216FEA10F0028BAC7 /* HTExampleRasterizableComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTExampleRasterizableComponent.m; sourceTree = "<group>"; };
-		1F93B08316FEA10F0028BAC7 /* HTExampleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTExampleTableCell.h; sourceTree = "<group>"; };
-		1F93B08416FEA10F0028BAC7 /* HTExampleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTExampleTableCell.m; sourceTree = "<group>"; };
-		1F93B08516FEA10F0028BAC7 /* HTExampleTableCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTExampleTableCellProtocol.h; sourceTree = "<group>"; };
-		1F93B08616FEA10F0028BAC7 /* HTExampleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTExampleTableViewController.h; sourceTree = "<group>"; };
-		1F93B08716FEA10F0028BAC7 /* HTExampleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTExampleTableViewController.m; sourceTree = "<group>"; };
-		1F93B08816FEA10F0028BAC7 /* HTGeneratedImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTGeneratedImagesViewController.h; sourceTree = "<group>"; };
-		1F93B08916FEA10F0028BAC7 /* HTGeneratedImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGeneratedImagesViewController.m; sourceTree = "<group>"; };
-		1F93B08A16FEA10F0028BAC7 /* HTGeneratedImageTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTGeneratedImageTableCell.h; sourceTree = "<group>"; };
-		1F93B08B16FEA10F0028BAC7 /* HTGeneratedImageTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGeneratedImageTableCell.m; sourceTree = "<group>"; };
-		1F93B08C16FEA10F0028BAC7 /* HTNoRasterizationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTNoRasterizationCell.h; sourceTree = "<group>"; };
-		1F93B08D16FEA10F0028BAC7 /* HTNoRasterizationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTNoRasterizationCell.m; sourceTree = "<group>"; };
 		1F93B09C16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTKitDemoStoryboard.storyboard; sourceTree = "<group>"; };
 		1F96265916FEB0A3007836BB /* HTSARIVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSARIVViewController.h; sourceTree = "<group>"; };
 		1F96265A16FEB0A3007836BB /* HTSARIVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSARIVViewController.m; sourceTree = "<group>"; };
@@ -194,21 +203,21 @@
 		1F93B07E16FEA1000028BAC7 /* HTStateAwareRasterImageView */ = {
 			isa = PBXGroup;
 			children = (
-				1F93B07F16FEA10F0028BAC7 /* HTCacheKeyCollector.h */,
-				1F93B08016FEA10F0028BAC7 /* HTCacheKeyCollector.m */,
-				1F93B08116FEA10F0028BAC7 /* HTExampleRasterizableComponent.h */,
-				1F93B08216FEA10F0028BAC7 /* HTExampleRasterizableComponent.m */,
-				1F93B08316FEA10F0028BAC7 /* HTExampleTableCell.h */,
-				1F93B08416FEA10F0028BAC7 /* HTExampleTableCell.m */,
-				1F93B08516FEA10F0028BAC7 /* HTExampleTableCellProtocol.h */,
-				1F93B08616FEA10F0028BAC7 /* HTExampleTableViewController.h */,
-				1F93B08716FEA10F0028BAC7 /* HTExampleTableViewController.m */,
-				1F93B08816FEA10F0028BAC7 /* HTGeneratedImagesViewController.h */,
-				1F93B08916FEA10F0028BAC7 /* HTGeneratedImagesViewController.m */,
-				1F93B08A16FEA10F0028BAC7 /* HTGeneratedImageTableCell.h */,
-				1F93B08B16FEA10F0028BAC7 /* HTGeneratedImageTableCell.m */,
-				1F93B08C16FEA10F0028BAC7 /* HTNoRasterizationCell.h */,
-				1F93B08D16FEA10F0028BAC7 /* HTNoRasterizationCell.m */,
+				1F7827E7170ABB1F00C2981E /* HTGeneratedImagesViewController.h */,
+				1F7827E8170ABB1F00C2981E /* HTGeneratedImagesViewController.m */,
+				1F7827E9170ABB1F00C2981E /* HTGeneratedImageTableCell.h */,
+				1F7827EA170ABB1F00C2981E /* HTGeneratedImageTableCell.m */,
+				1F7827D7170ABB0800C2981E /* HTExampleRasterizableComponent.h */,
+				1F7827D8170ABB0800C2981E /* HTExampleRasterizableComponent.m */,
+				1F7827DA170ABB1400C2981E /* HTExampleTableViewController.h */,
+				1F7827DB170ABB1400C2981E /* HTExampleTableViewController.m */,
+				1F7827DC170ABB1400C2981E /* HTExampleTableCellProtocol.h */,
+				1F7827DD170ABB1400C2981E /* HTExampleTableCell.h */,
+				1F7827DE170ABB1400C2981E /* HTExampleTableCell.m */,
+				1F7827DF170ABB1400C2981E /* HTNoRasterizationCell.h */,
+				1F7827E0170ABB1400C2981E /* HTNoRasterizationCell.m */,
+				1F7827E1170ABB1400C2981E /* HTCacheKeyCollector.h */,
+				1F7827E2170ABB1400C2981E /* HTCacheKeyCollector.m */,
 			);
 			name = HTStateAwareRasterImageView;
 			sourceTree = "<group>";
@@ -234,6 +243,12 @@
 		85C7D6FB23E78EEC3F59D7C9 /* HTKit */ = {
 			isa = PBXGroup;
 			children = (
+				1F7827D4170AB9DB00C2981E /* HTShapeView.h */,
+				1F7827D5170AB9DB00C2981E /* HTShapeView.m */,
+				1F7827CE170AB99D00C2981E /* HTHighlightedShapeView.h */,
+				1F7827CF170AB99D00C2981E /* HTHighlightedShapeView.m */,
+				1F7827D0170AB99D00C2981E /* UIBezierPath+HTUtilities.h */,
+				1F7827D1170AB99D00C2981E /* UIBezierPath+HTUtilities.m */,
 				1F96266516FED790007836BB /* HTFloatEqual.h */,
 				1F96266416FED72D007836BB /* HTGraphicsUtilities.h */,
 				85C7D98DE5F4009009D8E340 /* NSObject+HTUpdateAggregator.h */,
@@ -337,13 +352,6 @@
 				1F1CF77316FE66FE004B0218 /* HTAppDelegate.m in Sources */,
 				1F1CF77C16FE66FE004B0218 /* HTViewController.m in Sources */,
 				1F93B07A16FE944F0028BAC7 /* HTGradientListScrollView.m in Sources */,
-				1F93B08E16FEA10F0028BAC7 /* HTCacheKeyCollector.m in Sources */,
-				1F93B08F16FEA10F0028BAC7 /* HTExampleRasterizableComponent.m in Sources */,
-				1F93B09016FEA10F0028BAC7 /* HTExampleTableCell.m in Sources */,
-				1F93B09116FEA10F0028BAC7 /* HTExampleTableViewController.m in Sources */,
-				1F93B09216FEA10F0028BAC7 /* HTGeneratedImagesViewController.m in Sources */,
-				1F93B09316FEA10F0028BAC7 /* HTGeneratedImageTableCell.m in Sources */,
-				1F93B09416FEA10F0028BAC7 /* HTNoRasterizationCell.m in Sources */,
 				85C7D2925942C113ABD486F7 /* NSObject+HTUpdateAggregator.m in Sources */,
 				85C7D25E0FAD2FDBE2F29EB2 /* UIView+HTLayoutWatcher.m in Sources */,
 				1F96265B16FEB0A3007836BB /* HTSARIVViewController.m in Sources */,
@@ -354,6 +362,16 @@
 				85C7D86E793F28934E1F1510 /* HTCarSwitcherView.m in Sources */,
 				85C7D0ECCDA30761C4A4D28A /* HTCarDetailsViewV2.m in Sources */,
 				85C7D7C7FA3726C359044634 /* HTCarDetailsViewV3.m in Sources */,
+				1F7827D2170AB99D00C2981E /* HTHighlightedShapeView.m in Sources */,
+				1F7827D3170AB99D00C2981E /* UIBezierPath+HTUtilities.m in Sources */,
+				1F7827D6170AB9DC00C2981E /* HTShapeView.m in Sources */,
+				1F7827D9170ABB0800C2981E /* HTExampleRasterizableComponent.m in Sources */,
+				1F7827E3170ABB1400C2981E /* HTExampleTableViewController.m in Sources */,
+				1F7827E4170ABB1400C2981E /* HTExampleTableCell.m in Sources */,
+				1F7827E5170ABB1400C2981E /* HTNoRasterizationCell.m in Sources */,
+				1F7827E6170ABB1400C2981E /* HTCacheKeyCollector.m in Sources */,
+				1F7827EB170ABB1F00C2981E /* HTGeneratedImagesViewController.m in Sources */,
+				1F7827EC170ABB1F00C2981E /* HTGeneratedImageTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

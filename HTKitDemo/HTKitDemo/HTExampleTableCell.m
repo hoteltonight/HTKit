@@ -17,9 +17,9 @@
 
 static UIEdgeInsets const kEdgeInsets = { 6, 6, 6, 6 };
 
-@interface HTExampleTableCell () <HTStateAwareRasterImageViewDelegate>
+@interface HTExampleTableCell () <HTRasterViewDelegate>
 
-@property (nonatomic, strong) HTStateAwareRasterImageView *stateAwareRasterImageView;
+@property (nonatomic, strong) HTRasterView *stateAwareRasterImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 
 @end
@@ -39,7 +39,7 @@ static UIEdgeInsets const kEdgeInsets = { 6, 6, 6, 6 };
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:HTExampleTableCellReuseIdentifier];
     if (self) {
         _rasterizableComponent = [[HTExampleRasterizableComponent alloc] init];
-        _stateAwareRasterImageView = [[HTStateAwareRasterImageView alloc] init];
+        _stateAwareRasterImageView = [[HTRasterView alloc] init];
         _stateAwareRasterImageView.rasterizableView = _rasterizableComponent;
         _stateAwareRasterImageView.delegate = self;
         [self addSubview:_stateAwareRasterImageView];
@@ -63,9 +63,9 @@ static UIEdgeInsets const kEdgeInsets = { 6, 6, 6, 6 };
                                        titleLabelSizeThatFits.height);
 }
 
-- (void)rasterImageViewWillRegenerateImage:(HTStateAwareRasterImageView *)rasterImageView
+- (void)rasterViewWillRegenerateImage:(HTRasterView *)rasterView
 {
-    [[HTCacheKeyCollector shared] cacheKeyAdded:[rasterImageView cacheKey]];
+    [[HTCacheKeyCollector shared] cacheKeyAdded:[rasterView cacheKey]];
 }
 
 - (void)setTitle:(NSString *)title

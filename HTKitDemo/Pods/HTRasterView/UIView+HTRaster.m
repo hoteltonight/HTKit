@@ -3,7 +3,13 @@
 //  HotelTonight
 //
 //  Created by Jacob Jennings on 11/29/12.
-//  Copyright (c) 2012 Hotel Tonight. All rights reserved.
+//  Copyright (c) 2013 HotelTonight
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+//  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
 #import "UIView+HTRaster.h"
@@ -29,23 +35,6 @@
         CGContextClipToMask(context, rect, layerMaskImage.CGImage);
     }
     [self.layer renderInContext:context];
-}
-
-- (void)renderAllStateAwareRasterImageViewsFromTheBottomUp;
-{
-    for (UIView *view in self.subviews)
-    {
-        [view renderAllStateAwareRasterImageViewsFromTheBottomUp];
-    }
-    if ([self isKindOfClass:[HTStateAwareRasterImageView class]])
-    {
-        HTStateAwareRasterImageView *rasterImageView = (HTStateAwareRasterImageView *)self;
-        BOOL drawsOnMainThread = rasterImageView.drawsOnMainThread;
-        rasterImageView.drawsOnMainThread = YES;
-        [rasterImageView regenerateImage:^{
-            rasterImageView.drawsOnMainThread = drawsOnMainThread;
-        }];
-    }
 }
 
 - (UIImage *)layerMaskImage
@@ -87,12 +76,12 @@
     return nil;
 }
 
-- (HTStateAwareRasterImageView *)htRasterImageView
+- (HTRasterView *)htRasterImageView
 {
     return objc_getAssociatedObject(self, (void *)&@selector(htRasterImageView));
 }
 
-- (void)setHtRasterImageView:(HTStateAwareRasterImageView *)htRasterImageView
+- (void)setHtRasterImageView:(HTRasterView *)htRasterImageView
 {
     objc_setAssociatedObject(self, (void *)&@selector(htRasterImageView), htRasterImageView, OBJC_ASSOCIATION_ASSIGN);
     [self performSelector:@selector(checkRegisterWithAncestor) withObject:nil afterDelay:0];
@@ -101,7 +90,7 @@
 - (void)htRasterDidMoveToSuperview
 {
     [self htRasterDidMoveToSuperview];
-    if (![self isKindOfClass:[HTStateAwareRasterImageView class]])
+    if (![self isKindOfClass:[HTRasterView class]])
     {
         return;
     }
@@ -110,25 +99,25 @@
 
 - (void)checkRegisterWithAncestor
 {
-    HTStateAwareRasterImageView *firstAncestorRasterImageView = [self firstAncestorRasterizableView].htRasterImageView;
+    HTRasterView *firstAncestorRasterImageView = [self firstAncestorRasterizableView].htRasterImageView;
     if (firstAncestorRasterImageView)
     {
-        [firstAncestorRasterImageView registerDescendantRasterImageView:(HTStateAwareRasterImageView *)self];
+        [firstAncestorRasterImageView registerDescendantRasterView:(HTRasterView *) self];
     }
 }
 
 - (void)unregisterWithAncestor
 {
-    HTStateAwareRasterImageView *firstAncestorRasterImageView = [self firstAncestorRasterizableView].htRasterImageView;
+    HTRasterView *firstAncestorRasterImageView = [self firstAncestorRasterizableView].htRasterImageView;
     if (firstAncestorRasterImageView)
     {
-        [firstAncestorRasterImageView unregisterDescendantRasterImageView:(HTStateAwareRasterImageView *)self];
+        [firstAncestorRasterImageView unregisterDescendantRasterView:(HTRasterView *) self];
     }
 }
 
 - (void)htRasterWillMoveToSuperview:(UIView *)newSuperview
 {
-    if (![self isKindOfClass:[HTStateAwareRasterImageView class]])
+    if (![self isKindOfClass:[HTRasterView class]])
     {
         return;
     }
@@ -137,6 +126,19 @@
         [self unregisterWithAncestor];
     }
     [self htRasterWillMoveToSuperview:newSuperview];
+}
+
+- (void)layoutSubtreeIfNeeded
+{
+    [self layoutIfNeeded];
+    for (UIView *view in self.subviews)
+    {
+        if ([view isKindOfClass:[HTRasterView class]])
+        {
+            [view setNeedsLayout];
+        }
+        [view layoutSubtreeIfNeeded];
+    }
 }
 
 @end

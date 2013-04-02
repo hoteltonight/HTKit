@@ -1,1 +1,0 @@
-../../HTStateAwareRasterImageView/NSObject+HTPropertyHash.h

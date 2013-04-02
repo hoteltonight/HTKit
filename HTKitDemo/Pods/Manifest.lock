@@ -5,7 +5,7 @@ PODS:
   - HTGradientEasing (0.0.4):
     - AHEasing
     - UIColor-CrossFade
-  - HTStateAwareRasterImageView (1.1.4):
+  - HTRasterView (1.1.9):
     - JJCachedAsyncViewDrawing
   - JJCachedAsyncViewDrawing (0.0.1)
   - SFObservers (1.0)
@@ -16,7 +16,7 @@ DEPENDENCIES:
   - HTAutocompleteTextField
   - HTDelegateProxy
   - HTGradientEasing
-  - HTStateAwareRasterImageView
+  - HTRasterView
   - SFObservers
   - UIViewPlusPosition
 
@@ -25,7 +25,7 @@ SPEC CHECKSUMS:
   HTAutocompleteTextField: 7c47560f1d359cdce72e08cb36acf6a0cf43972d
   HTDelegateProxy: f01c6deb2d9850172502a694a7cb7d47b9ed3d3f
   HTGradientEasing: e764de9c1790b8957f8987fb543246a76ea06bc4
-  HTStateAwareRasterImageView: 3efe2780daf1f67b69e1de0e71866f4f64cf8628
+  HTRasterView: 3eade5c42f168b0c2a650ef2377f3bd687c75d28
   JJCachedAsyncViewDrawing: 6ebb56c4b4c3242469015ac5de99af75e6360d4a
   SFObservers: c73182a89feb75caec41f78c65d6ca00149c7e75
   UIColor-CrossFade: afd26f1e60caa96184b0e894736b38039507c46e

@@ -18,7 +18,7 @@ static CGFloat const horizontalMargin = 6;
 
 @interface HTGeneratedImageTableCell ()
 
-@property (nonatomic, strong) UITextView *cacheKeyTextView;
+@property (nonatomic, strong) UILabel *cacheKeyLabel;
 @property (nonatomic, strong) UIImageView *actualSizeImageView;
 @property (nonatomic, strong) UIImageView *standardSizeImageView;
 
@@ -26,15 +26,20 @@ static CGFloat const horizontalMargin = 6;
 
 @implementation HTGeneratedImageTableCell
 
-- (id)init
+- (instancetype)init
 {
-    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:HTGeneratedImageTableCellReuseIdentifier];
+    self = [self initWithStyle:UITableViewCellStyleDefault reuseIdentifier:HTGeneratedImageTableCellReuseIdentifier];
+    return self;
+}
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        _cacheKeyTextView = [[UITextView alloc] init];
-        _cacheKeyTextView.editable = NO;
-        _cacheKeyTextView.font = [UIFont fontWithName:@"HelveticaNeue" size:10];
-        [self.contentView addSubview:_cacheKeyTextView];
+        _cacheKeyLabel = [[UILabel alloc] init];
+        _cacheKeyLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:10];
+        [self.contentView addSubview:_cacheKeyLabel];
         
         _actualSizeImageView = [[UIImageView alloc] init];
         [self.contentView addSubview:_actualSizeImageView];
@@ -63,10 +68,10 @@ static CGFloat const horizontalMargin = 6;
                                                 imageViewSizeThatFits.width,
                                                 imageViewSizeThatFits.height);
     
-    self.cacheKeyTextView.frame = CGRectMake(0,
-                                             0,
-                                             CGRectGetMinX(self.actualSizeImageView.frame) - horizontalMargin,
-                                             self.bounds.size.height);
+    self.cacheKeyLabel.frame = CGRectMake(0,
+                                          0,
+                                          CGRectGetMinX(self.actualSizeImageView.frame) - horizontalMargin,
+                                          self.bounds.size.height);
 }
 
 - (void)setImage:(UIImage *)image
@@ -83,7 +88,7 @@ static CGFloat const horizontalMargin = 6;
 {
     _cacheKey = cacheKey;
     
-    self.cacheKeyTextView.text = cacheKey;
+    self.cacheKeyLabel.text = cacheKey;
     
     [self setNeedsLayout];
 }

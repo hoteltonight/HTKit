@@ -25,12 +25,12 @@ static NSString const *kUpdateNeededKey = @"UpdateNeededKey";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         method_exchangeImplementations(
-                class_getInstanceMethod(self, @selector(init)),
-                class_getInstanceMethod(self, @selector(initUpdateAggregator)));
+                class_getInstanceMethod([NSObject class], @selector(init)),
+                class_getInstanceMethod([NSObject class], @selector(initUpdateAggregator)));
     });
 }
 
-- (instancetype)initUpdateAggregator
+- (id)initUpdateAggregator
 {
     self = [self initUpdateAggregator];
     if (self && [self conformsToProtocol:@protocol(HTUpdatable)])
