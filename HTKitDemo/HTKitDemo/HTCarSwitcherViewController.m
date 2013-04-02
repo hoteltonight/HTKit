@@ -13,6 +13,7 @@
 #import "HTCarSwitcherViewController.h"
 #import "HTCarDetailsViewV1.h"
 #import "HTCarDetailsViewV2.h"
+#import "HTCarDetailsViewV3.h"
 
 @interface HTCarSwitcherViewController()
 
@@ -38,7 +39,7 @@
         }
         case 2:
         {
-            
+            self.carSwitcherView.carDetailsView = [[HTCarDetailsViewV3 alloc] init];
             break;
         }
         default:

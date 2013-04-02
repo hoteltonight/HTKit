@@ -13,6 +13,7 @@
 #import "HTGraphicsUtilities.h"
 #import "UIView+Position.h"
 #import "NSObject+HTUpdateAggregator.h"
+#import <QuartzCore/QuartzCore.h>
 
 static UIEdgeInsets const kEdgeInsets = { .top = 6, .left = 6, .bottom = 6, .right = 6 };
 
@@ -29,19 +30,16 @@ static UIEdgeInsets const kEdgeInsets = { .top = 6, .left = 6, .bottom = 6, .rig
 
 + (NSArray *)keyPathsToTriggerUpdate
 {
-#warning TODO associated object for less boilerplate!
-    static NSArray *keyPathsToTriggerUpdate;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        keyPathsToTriggerUpdate = @[@"make", @"model", @"colorName", @"carDescription"];
-    });
-    return keyPathsToTriggerUpdate;
+    return @[@"make", @"model", @"colorName", @"carDescription"];
 }
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor colorWithWhite:0.2 alpha:1];
+        self.layer.cornerRadius = 6;
+        
         _makeLabel = [self createAndAddLabel];
         _modelLabel = [self createAndAddLabel];
         _colorNameLabel = [self createAndAddLabel];
@@ -53,6 +51,8 @@ static UIEdgeInsets const kEdgeInsets = { .top = 6, .left = 6, .bottom = 6, .rig
 - (UILabel *)createAndAddLabel
 {
     UILabel *label = [[UILabel alloc] init];
+    label.lineBreakMode = NSLineBreakByWordWrapping;
+    label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor clearColor];
     label.numberOfLines = 0;
     [self addSubview:label];
@@ -62,50 +62,52 @@ static UIEdgeInsets const kEdgeInsets = { .top = 6, .left = 6, .bottom = 6, .rig
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-
+    [self updateContentIfNeeded];
+    
     CGSize insetSize = HTSizeEdgeInset(self.frameSize, kEdgeInsets);
     self.makeLabel.frame = (CGRect) {
-            .origin.x = kEdgeInsets.left,
-            .origin.y = kEdgeInsets.top,
-            .size = [self.makeLabel sizeThatFits:insetSize]
+        .origin.x = kEdgeInsets.left,
+        .origin.y = kEdgeInsets.top,
+        .size = [self.makeLabel sizeThatFits:insetSize]
     };
     self.modelLabel.frame = (CGRect) {
-            .origin.x = kEdgeInsets.left,
-            .origin.y = CGRectGetMaxY(self.makeLabel.frame),
-            .size = [self.modelLabel sizeThatFits:insetSize]
+        .origin.x = kEdgeInsets.left,
+        .origin.y = CGRectGetMaxY(self.makeLabel.frame),
+        .size = [self.modelLabel sizeThatFits:insetSize]
     };
     self.colorNameLabel.frame = (CGRect) {
-            .origin.x = kEdgeInsets.left,
-            .origin.y = CGRectGetMaxY(self.modelLabel.frame),
-            .size = [self.colorNameLabel sizeThatFits:insetSize]
+        .origin.x = kEdgeInsets.left,
+        .origin.y = CGRectGetMaxY(self.modelLabel.frame),
+        .size = [self.colorNameLabel sizeThatFits:insetSize]
     };
     self.descriptionLabel.frame = (CGRect) {
-            .origin.x = kEdgeInsets.left,
-            .origin.y = CGRectGetMaxY(self.colorNameLabel.frame),
-            .size = [self.descriptionLabel sizeThatFits:insetSize]
+        .origin.x = kEdgeInsets.left,
+        .origin.y = CGRectGetMaxY(self.colorNameLabel.frame),
+        .size = [self.descriptionLabel sizeThatFits:insetSize]
     };
 }
 
 - (CGSize)sizeThatFits:(CGSize)size
 {
+    [self updateContentIfNeeded];
+    
     CGSize insetSize = HTSizeEdgeInset(size, kEdgeInsets);
     CGSize makeLabelSize = [self.makeLabel sizeThatFits:insetSize];
     CGSize modelLabelSize = [self.modelLabel sizeThatFits:insetSize];
     CGSize colorNameLabelSize = [self.colorNameLabel sizeThatFits:insetSize];
     CGSize descriptionLabelSize = [self.descriptionLabel sizeThatFits:insetSize];
-
+    
     return CGSizeMake(size.width,
-            makeLabelSize.height
-                    + modelLabelSize.height
-                    + colorNameLabelSize.height
-                    + descriptionLabelSize.height
-                    + kEdgeInsets.top
-                    + kEdgeInsets.bottom);
+                      makeLabelSize.height
+                      + modelLabelSize.height
+                      + colorNameLabelSize.height
+                      + descriptionLabelSize.height
+                      + kEdgeInsets.top
+                      + kEdgeInsets.bottom);
 }
 
 - (void)updateContent
 {
-    NSLog(@"updateContent");
     self.makeLabel.text = self.make;
     self.modelLabel.text = self.model;
     self.colorNameLabel.text = self.colorName;

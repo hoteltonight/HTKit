@@ -51,6 +51,7 @@ static UIEdgeInsets const kEdgeInsets = { .top = 6, .left = 6, .bottom = 6, .rig
 - (UILabel *)createAndAddLabel
 {
     UILabel *label = [[UILabel alloc] init];
+    label.lineBreakMode = NSLineBreakByWordWrapping;
     label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor clearColor];
     label.numberOfLines = 0;

@@ -11,21 +11,19 @@
 
 
 #import "HTCarSwitcherView.h"
+#import "NSObject+HTUpdateAggregator.h"
 
 @implementation HTCarSwitcherView
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
+
     self.carDetailsView.frame = (CGRect) {
         .origin.x = 0,
         .origin.y = 0,
         .size = [self.carDetailsView sizeThatFits:self.bounds.size]
     };
-#warning Remove RD log
-    NSLog(@"\n\n%@", [self performSelector:@selector(recursiveDescription)]);
-
 }
 
 - (void)setCarDetailsView:(UIView<HTCarDetailsProtocol> *)carDetailsView

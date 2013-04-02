@@ -21,12 +21,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HTKitDemo/HTCarDetailsViewV2.m"
-         timestampString = "385857182.491974"
+         timestampString = "386578555.909134"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "92"
-         endingLineNumber = "92"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
          landmarkName = "-sizeThatFits:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "HTKitDemo/HTCarDetailsViewV1.m"
+         timestampString = "386578025.299901"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "100"
+         endingLineNumber = "100"
+         landmarkName = "-sizeThatFits:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "HTKitDemo/HTCarDetailsViewV2.m"
+         timestampString = "386578555.909134"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "111"
+         endingLineNumber = "111"
+         landmarkName = "-updateContent"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
