@@ -32,6 +32,8 @@
 		1F7827F6170BDA8100C2981E /* HTCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827F5170BDA8100C2981E /* HTCardView.m */; };
 		1F78287B170C096700C2981E /* HTShapeDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78287A170C096700C2981E /* HTShapeDemoViewController.m */; };
 		1F78287E170C097B00C2981E /* HTShapeDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78287D170C097B00C2981E /* HTShapeDemoView.m */; };
+		1F782881170CDBC900C2981E /* UIView+HTUpdateAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F782880170CDBC900C2981E /* UIView+HTUpdateAggregator.m */; };
+		1F782884170CDCF400C2981E /* UIViewController+HTUpdateAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F782883170CDCF300C2981E /* UIViewController+HTUpdateAggregator.m */; };
 		1F93B07A16FE944F0028BAC7 /* HTGradientListScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93B07916FE944F0028BAC7 /* HTGradientListScrollView.m */; };
 		1F93B09D16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F93B09C16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard */; };
 		1F96265B16FEB0A3007836BB /* HTSARIVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96265A16FEB0A3007836BB /* HTSARIVViewController.m */; };
@@ -46,6 +48,11 @@
 		85C7D86E793F28934E1F1510 /* HTCarSwitcherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C7D56A0002E24833405534 /* HTCarSwitcherView.m */; };
 		85C7D9A0E1B9F32B22A9E756 /* HTCarSwitcherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C7D1D6B79504C258C49A2A /* HTCarSwitcherViewController.m */; };
 		85C7DB795A4AD479329B5B3B /* HTWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C7D5372A6201A7C6BA7022 /* HTWatcher.m */; };
+		8D478BA3170CB3E600DD6121 /* HTSampleFieldsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D478BA2170CB3E600DD6121 /* HTSampleFieldsTableViewController.m */; };
+		8D478BA6170CC38000DD6121 /* HTAutocompleteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D478BA5170CC38000DD6121 /* HTAutocompleteManager.m */; };
+		8DDEAA51170CAE0D00F82D0E /* HTRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDEAA50170CAE0D00F82D0E /* HTRootTableViewController.m */; };
+		8DDEAA54170CAE2600F82D0E /* HTAutocompleteTextFieldDemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DDEAA53170CAE2600F82D0E /* HTAutocompleteTextFieldDemo.storyboard */; };
+		8DDEAA57170CAE5500F82D0E /* ht-logo-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DDEAA56170CAE5500F82D0E /* ht-logo-black.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +103,10 @@
 		1F78287A170C096700C2981E /* HTShapeDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTShapeDemoViewController.m; sourceTree = "<group>"; };
 		1F78287C170C097B00C2981E /* HTShapeDemoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTShapeDemoView.h; sourceTree = "<group>"; };
 		1F78287D170C097B00C2981E /* HTShapeDemoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTShapeDemoView.m; sourceTree = "<group>"; };
+		1F78287F170CDBC900C2981E /* UIView+HTUpdateAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HTUpdateAggregator.h"; sourceTree = "<group>"; };
+		1F782880170CDBC900C2981E /* UIView+HTUpdateAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTUpdateAggregator.m"; sourceTree = "<group>"; };
+		1F782882170CDCF300C2981E /* UIViewController+HTUpdateAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HTUpdateAggregator.h"; sourceTree = "<group>"; };
+		1F782883170CDCF300C2981E /* UIViewController+HTUpdateAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HTUpdateAggregator.m"; sourceTree = "<group>"; };
 		1F93B07816FE944F0028BAC7 /* HTGradientListScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTGradientListScrollView.h; sourceTree = "<group>"; };
 		1F93B07916FE944F0028BAC7 /* HTGradientListScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGradientListScrollView.m; sourceTree = "<group>"; };
 		1F93B09C16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTKitDemoStoryboard.storyboard; sourceTree = "<group>"; };
@@ -124,6 +135,14 @@
 		85C7DE5D4A4C5315366B997A /* HTCarDetailsViewV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCarDetailsViewV2.h; sourceTree = "<group>"; };
 		85C7DEE5215BC3C18F246C12 /* HTCarDetailsViewV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCarDetailsViewV2.m; sourceTree = "<group>"; };
 		85C7DF74DCBF497AD3CDD458 /* HTCarSwitcherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCarSwitcherViewController.h; sourceTree = "<group>"; };
+		8D478BA1170CB3E600DD6121 /* HTSampleFieldsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSampleFieldsTableViewController.h; sourceTree = "<group>"; };
+		8D478BA2170CB3E600DD6121 /* HTSampleFieldsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSampleFieldsTableViewController.m; sourceTree = "<group>"; };
+		8D478BA4170CC38000DD6121 /* HTAutocompleteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAutocompleteManager.h; sourceTree = "<group>"; };
+		8D478BA5170CC38000DD6121 /* HTAutocompleteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAutocompleteManager.m; sourceTree = "<group>"; };
+		8DDEAA4F170CAE0D00F82D0E /* HTRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTRootTableViewController.h; sourceTree = "<group>"; };
+		8DDEAA50170CAE0D00F82D0E /* HTRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTRootTableViewController.m; sourceTree = "<group>"; };
+		8DDEAA53170CAE2600F82D0E /* HTAutocompleteTextFieldDemo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTAutocompleteTextFieldDemo.storyboard; sourceTree = "<group>"; };
+		8DDEAA56170CAE5500F82D0E /* ht-logo-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ht-logo-black.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +195,8 @@
 		1F1CF76816FE66FE004B0218 /* HTKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8DDEAA55170CAE4400F82D0E /* Images */,
+				8DDEAA52170CAE1B00F82D0E /* HTAutocompleteTextFieldDemo */,
 				1F782878170C094400C2981E /* HTHighlightedShapeView */,
 				1F7827F0170BD9E700C2981E /* HTCard */,
 				1F96265C16FEBB2F007836BB /* HTCar */,
@@ -187,6 +208,8 @@
 				1F1CF77A16FE66FE004B0218 /* HTViewController.h */,
 				1F1CF77B16FE66FE004B0218 /* HTViewController.m */,
 				1F93B09C16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard */,
+				8DDEAA4F170CAE0D00F82D0E /* HTRootTableViewController.h */,
+				8DDEAA50170CAE0D00F82D0E /* HTRootTableViewController.m */,
 				1F96265916FEB0A3007836BB /* HTSARIVViewController.h */,
 				1F96265A16FEB0A3007836BB /* HTSARIVViewController.m */,
 			);
@@ -294,6 +317,10 @@
 				1F96266416FED72D007836BB /* HTGraphicsUtilities.h */,
 				85C7D98DE5F4009009D8E340 /* NSObject+HTUpdateAggregator.h */,
 				85C7DAE4E91EB1F33D4E8117 /* NSObject+HTUpdateAggregator.m */,
+				1F78287F170CDBC900C2981E /* UIView+HTUpdateAggregator.h */,
+				1F782880170CDBC900C2981E /* UIView+HTUpdateAggregator.m */,
+				1F782882170CDCF300C2981E /* UIViewController+HTUpdateAggregator.h */,
+				1F782883170CDCF300C2981E /* UIViewController+HTUpdateAggregator.m */,
 				85C7DB0E8ECF52F7C84EB734 /* UIView+HTLayoutWatcher.h */,
 				85C7D00E7F914BB13B86CFE8 /* UIView+HTLayoutWatcher.m */,
 				85C7D79C644F5D6217E5208C /* NSObject+HTWatcher.h */,
@@ -302,6 +329,26 @@
 				85C7D5372A6201A7C6BA7022 /* HTWatcher.m */,
 			);
 			name = HTKit;
+			sourceTree = "<group>";
+		};
+		8DDEAA52170CAE1B00F82D0E /* HTAutocompleteTextFieldDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8D478BA4170CC38000DD6121 /* HTAutocompleteManager.h */,
+				8D478BA5170CC38000DD6121 /* HTAutocompleteManager.m */,
+				8D478BA1170CB3E600DD6121 /* HTSampleFieldsTableViewController.h */,
+				8D478BA2170CB3E600DD6121 /* HTSampleFieldsTableViewController.m */,
+				8DDEAA53170CAE2600F82D0E /* HTAutocompleteTextFieldDemo.storyboard */,
+			);
+			name = HTAutocompleteTextFieldDemo;
+			sourceTree = "<group>";
+		};
+		8DDEAA55170CAE4400F82D0E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8DDEAA56170CAE5500F82D0E /* ht-logo-black.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +409,8 @@
 				1F1CF77716FE66FE004B0218 /* Default@2x.png in Resources */,
 				1F1CF77916FE66FE004B0218 /* Default-568h@2x.png in Resources */,
 				1F93B09D16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard in Resources */,
+				8DDEAA54170CAE2600F82D0E /* HTAutocompleteTextFieldDemo.storyboard in Resources */,
+				8DDEAA57170CAE5500F82D0E /* ht-logo-black.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +467,11 @@
 				1F7827F6170BDA8100C2981E /* HTCardView.m in Sources */,
 				1F78287B170C096700C2981E /* HTShapeDemoViewController.m in Sources */,
 				1F78287E170C097B00C2981E /* HTShapeDemoView.m in Sources */,
+				8DDEAA51170CAE0D00F82D0E /* HTRootTableViewController.m in Sources */,
+				8D478BA3170CB3E600DD6121 /* HTSampleFieldsTableViewController.m in Sources */,
+				8D478BA6170CC38000DD6121 /* HTAutocompleteManager.m in Sources */,
+				1F782881170CDBC900C2981E /* UIView+HTUpdateAggregator.m in Sources */,
+				1F782884170CDCF400C2981E /* UIViewController+HTUpdateAggregator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +555,7 @@
 				GCC_PREFIX_HEADER = "HTKitDemo/HTKitDemo-Prefix.pch";
 				INFOPLIST_FILE = "HTKitDemo/HTKitDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -513,6 +568,7 @@
 				GCC_PREFIX_HEADER = "HTKitDemo/HTKitDemo-Prefix.pch";
 				INFOPLIST_FILE = "HTKitDemo/HTKitDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
