@@ -26,3 +26,16 @@ NSObject+HTUpdateAggregator
 SFObservers
 UIViewPlusPosition from Moriarty (todo link)
 Fork of MSCachedAsyncViewDrawing by Javier Soto
+
+## Contributions welcome!
+
+## Use it? Love/hate it?
+
+Tweet the author @jakejennings, and check out HotelTonight's engineering blog: http://engineering.hoteltonight.com
+
+Also, check out HotelTonight's other iOS open source:
+* https://github.com/hoteltonight/HTAutocompleteTextField
+* https://github.com/hoteltonight/HTGradientEasing
+* https://github.com/hoteltonight/HTStateAwareRasterImageView
+* https://github.com/hoteltonight/HTDelegateProxy
+* https://github.com/hoteltonight/HTCoreImage
