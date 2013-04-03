@@ -26,6 +26,7 @@
 
 @interface NSObject (HTUpdateAggregator)
 
+- (void)startObservingForUpdates;
 - (void)setNeedsUpdate;
 - (void)updateContentIfNeeded;
 

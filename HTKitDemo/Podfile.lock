@@ -1,28 +1,29 @@
+
 PODS:
-  - AHEasing (1.0)
-  - HTAutocompleteTextField (1.0.1)
-  - HTDelegateProxy (0.0.3)
-  - HTGradientEasing (0.0.4):
-    - AHEasing
-    - UIColor-CrossFade
-  - HTRasterView (1.1.9):
-    - JJCachedAsyncViewDrawing
-  - JJCachedAsyncViewDrawing (0.0.1)
-  - SFObservers (1.0)
-  - UIColor-CrossFade (0.0.1)
-  - UIViewPlusPosition (0.0.1)
+- AHEasing (1.0)
+- HTAutocompleteTextField (1.1.2)
+- HTDelegateProxy (0.0.3)
+- HTGradientEasing (0.0.4):
+  - AHEasing
+  - UIColor-CrossFade
+- HTRasterView (1.1.9):
+  - JJCachedAsyncViewDrawing
+- JJCachedAsyncViewDrawing (0.0.1)
+- SFObservers (1.0)
+- UIColor-CrossFade (0.0.1)
+- UIViewPlusPosition (0.0.1)
 
 DEPENDENCIES:
-  - HTAutocompleteTextField
-  - HTDelegateProxy
-  - HTGradientEasing
-  - HTRasterView
-  - SFObservers
-  - UIViewPlusPosition
+- HTAutocompleteTextField
+- HTDelegateProxy
+- HTGradientEasing
+- HTRasterView
+- SFObservers
+- UIViewPlusPosition
 
 SPEC CHECKSUMS:
   AHEasing: 6f0a6e894ad0ce2d49013bf4123b313de91474fd
-  HTAutocompleteTextField: 7c47560f1d359cdce72e08cb36acf6a0cf43972d
+  HTAutocompleteTextField: 69eaa27fb32f44a2dcda8c969863a2aa79504d1b
   HTDelegateProxy: f01c6deb2d9850172502a694a7cb7d47b9ed3d3f
   HTGradientEasing: e764de9c1790b8957f8987fb543246a76ea06bc4
   HTRasterView: 3eade5c42f168b0c2a650ef2377f3bd687c75d28
@@ -31,4 +32,4 @@ SPEC CHECKSUMS:
   UIColor-CrossFade: afd26f1e60caa96184b0e894736b38039507c46e
   UIViewPlusPosition: b456af499d3525c3566d5d96d93e56d9facde440
 
-COCOAPODS: 0.17.1
+COCOAPODS: 0.16.0
