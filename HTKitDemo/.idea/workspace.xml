@@ -67,6 +67,9 @@
     <file path="/HTCardViewController.m" changelist="01f0295a-bf3e-45bc-bc62-e995a26eae9d" time="1364962528592" ignored="false" />
     <file path="/HTCardView.h" changelist="01f0295a-bf3e-45bc-bc62-e995a26eae9d" time="1364962351221" ignored="false" />
     <file path="/HTCardView.m" changelist="01f0295a-bf3e-45bc-bc62-e995a26eae9d" time="1364963996944" ignored="false" />
+    <file path="$USER_HOME$/ht-ios/HotelTonight/CIImage+HTConvenience.m" changelist="01f0295a-bf3e-45bc-bc62-e995a26eae9d" time="1364967216285" ignored="false" />
+    <file path="/HTShapeDemoView.h" changelist="01f0295a-bf3e-45bc-bc62-e995a26eae9d" time="1364972746981" ignored="false" />
+    <file path="/HTShapeDemoView.m" changelist="01f0295a-bf3e-45bc-bc62-e995a26eae9d" time="1364973208403" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,10 +142,8 @@
       <file leaf-file-name="HTCardViewController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#150#182#0" expanded="true" />
-              </folding>
+            <state line="20" column="0" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -150,7 +151,7 @@
       <file leaf-file-name="HTCardViewController.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
+            <state line="19" column="0" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -165,22 +166,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UIView.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h">
+      <file leaf-file-name="HTShapeDemoView.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HTKitDemo/HTShapeDemoView.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="206" column="8" selection-start="10018" selection-end="10018" vertical-scroll-proportion="0.0">
+            <state line="9" column="0" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HTCardView.m" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HTShapeDemoViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HTKitDemo/HTShapeDemoViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="30" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HTShapeDemoView.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HTKitDemo/HTShapeDemoView.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="16" selection-start="634" selection-end="634" vertical-scroll-proportion="0.5617816">
+              <folding>
+                <element signature="e#145#172#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HTCardView.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardView.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="155" column="24" selection-start="4532" selection-end="4532" vertical-scroll-proportion="0.31609195">
-              <folding>
-                <element signature="e#140#177#0" expanded="true" />
-              </folding>
+            <state line="155" column="12" selection-start="5279" selection-end="5279" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -188,7 +207,7 @@
       <file leaf-file-name="HTCardView.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardView.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
+            <state line="26" column="0" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -204,8 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/HTKitDemo/HTCarDetailsView.h" />
-        <option value="$PROJECT_DIR$/HTKitDemo/HTCarSwitcherView.h" />
         <option value="$PROJECT_DIR$/HTKitDemo/HTCarDetailsViewV1.m" />
         <option value="$PROJECT_DIR$/../UIView+HTLayoutWatcher.m" />
         <option value="$PROJECT_DIR$/HTKitDemo/HTCarSwitcherViewController.h" />
@@ -220,6 +237,8 @@
         <option value="$PROJECT_DIR$/HTKitDemo/HTCardViewController.m" />
         <option value="$PROJECT_DIR$/HTKitDemo/HTCardViewController.h" />
         <option value="$PROJECT_DIR$/HTKitDemo/HTCardView.m" />
+        <option value="$PROJECT_DIR$/HTKitDemo/HTShapeDemoView.h" />
+        <option value="$PROJECT_DIR$/HTKitDemo/HTShapeDemoView.m" />
       </list>
     </option>
   </component>
@@ -273,6 +292,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="DirectoryView.Xcode" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -351,6 +371,24 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="HTHighlightedShapeView" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTKitDemo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTKitDemo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="HTCard" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
@@ -371,7 +409,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="DirectoryView.Xcode" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -379,6 +416,7 @@
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="Errors" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../UIView+LayoutWatchers.m" />
+    <property name="FullScreen" value="false" />
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="HTKitDemo" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -433,7 +471,7 @@
     <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -441,7 +479,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="22" width="1920" height="1102" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962963" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962963" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -515,45 +553,64 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTWatcher.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../NSObject+HTUpdateAggregator.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="1" selection-start="2423" selection-end="2423" vertical-scroll-proportion="0.4032258">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../UIView+HTLayoutWatcher.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="44" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.46774194">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HTKitDemo/NSObject+HTWatcher.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="1" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="38" column="1" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCarDetailsViewV3.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="16" column="0" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCarDetailsViewV3.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="54" selection-start="272" selection-end="362" vertical-scroll-proportion="0.016129032">
+        <state line="12" column="54" selection-start="272" selection-end="362" vertical-scroll-proportion="0.016129032" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../HTGraphicsUtilities.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="1" selection-start="1898" selection-end="1898" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="206" column="8" selection-start="10018" selection-end="10018" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCarDetailsViewV2.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="33" selection-start="1252" selection-end="1253" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1364885792000" expanded="true" signature="1800:1853" placeholder="@[...]" />
+            <marker date="1364885792000" expanded="true" signature="4193:4470" placeholder="..." />
+            <marker date="1364885792000" expanded="true" signature="4193:4237" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -571,54 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCarDetailsViewV2.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="33" selection-start="1252" selection-end="1253" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1364885792000" expanded="true" signature="1800:1853" placeholder="@[...]" />
-            <marker date="1364885792000" expanded="true" signature="4193:4470" placeholder="..." />
-            <marker date="1364885792000" expanded="true" signature="4193:4237" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../HTGraphicsUtilities.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="1" selection-start="1898" selection-end="1898" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardView.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#150#182#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="8" selection-start="10018" selection-end="10018" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCarDetailsViewV1.m">
       <provider selected="true" editor-type-id="text-editor">
         <state line="157" column="7" selection-start="5510" selection-end="5510" vertical-scroll-proportion="0.8657172">
@@ -628,9 +637,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="24" selection-start="4532" selection-end="4532" vertical-scroll-proportion="0.31609195">
+        <state line="155" column="12" selection-start="5279" selection-end="5279" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTShapeDemoViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="30" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTShapeDemoView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTShapeDemoView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="16" selection-start="634" selection-end="634" vertical-scroll-proportion="0.5617816">
           <folding>
-            <element signature="e#140#177#0" expanded="true" />
+            <element signature="e#145#172#0" expanded="true" />
           </folding>
         </state>
       </provider>

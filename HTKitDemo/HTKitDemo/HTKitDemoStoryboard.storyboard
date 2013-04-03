@@ -128,6 +128,33 @@
                                             <segue destination="d2Q-it-99v" kind="push" id="hE0-7k-Tvh"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="MNi-aL-bCd" detailTextLabel="0O8-xT-9wq" style="IBUITableViewCellStyleSubtitle" id="7Rd-tI-3hB">
+                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="HTHighlightedShapeView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MNi-aL-bCd">
+                                                    <rect key="frame" x="10" y="2" width="219" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Example" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0O8-xT-9wq">
+                                                    <rect key="frame" x="10" y="24" width="55" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="0Bl-67-izX" kind="push" id="MbD-nj-3dL"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -269,6 +296,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5g-7E-bMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="883" y="57"/>
+        </scene>
+        <!--Shape Demo View Controller-->
+        <scene sceneID="WrT-FH-XND">
+            <objects>
+                <viewController id="0Bl-67-izX" customClass="HTShapeDemoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FOB-df-QWu" customClass="HTShapeDemoView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NcR-Of-H90"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M7h-1U-Lnt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-704" y="863"/>
         </scene>
         <!--Card View Controller-->
         <scene sceneID="5KG-J5-5yg">
@@ -544,6 +586,12 @@
         </class>
         <class className="HTSARIVViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSARIVViewController.h"/>
+        </class>
+        <class className="HTShapeDemoView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTShapeDemoView.h"/>
+        </class>
+        <class className="HTShapeDemoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTShapeDemoViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
