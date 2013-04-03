@@ -1,0 +1,16 @@
+.svn
+.idea/*
+!.idea/codeStyleSettings.xml
+*.pyc
+.project
+.classpath
+*.mode1v3
+*.pbxuser
+*.DS_Store
+*~
+*.swp
+xcuserdata
+Pods/Pods-Acknowledgements.markdown
+Pods/Pods-Acknowledgements.plist
+*.orig
+*.pbxproj.bak
