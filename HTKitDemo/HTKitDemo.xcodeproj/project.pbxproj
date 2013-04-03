@@ -32,6 +32,8 @@
 		1F7827F6170BDA8100C2981E /* HTCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827F5170BDA8100C2981E /* HTCardView.m */; };
 		1F78287B170C096700C2981E /* HTShapeDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78287A170C096700C2981E /* HTShapeDemoViewController.m */; };
 		1F78287E170C097B00C2981E /* HTShapeDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78287D170C097B00C2981E /* HTShapeDemoView.m */; };
+		1F782881170CDBC900C2981E /* UIView+HTUpdateAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F782880170CDBC900C2981E /* UIView+HTUpdateAggregator.m */; };
+		1F782884170CDCF400C2981E /* UIViewController+HTUpdateAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F782883170CDCF300C2981E /* UIViewController+HTUpdateAggregator.m */; };
 		1F93B07A16FE944F0028BAC7 /* HTGradientListScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93B07916FE944F0028BAC7 /* HTGradientListScrollView.m */; };
 		1F93B09D16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F93B09C16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard */; };
 		1F96265B16FEB0A3007836BB /* HTSARIVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96265A16FEB0A3007836BB /* HTSARIVViewController.m */; };
@@ -101,6 +103,10 @@
 		1F78287A170C096700C2981E /* HTShapeDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTShapeDemoViewController.m; sourceTree = "<group>"; };
 		1F78287C170C097B00C2981E /* HTShapeDemoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTShapeDemoView.h; sourceTree = "<group>"; };
 		1F78287D170C097B00C2981E /* HTShapeDemoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTShapeDemoView.m; sourceTree = "<group>"; };
+		1F78287F170CDBC900C2981E /* UIView+HTUpdateAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HTUpdateAggregator.h"; sourceTree = "<group>"; };
+		1F782880170CDBC900C2981E /* UIView+HTUpdateAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTUpdateAggregator.m"; sourceTree = "<group>"; };
+		1F782882170CDCF300C2981E /* UIViewController+HTUpdateAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HTUpdateAggregator.h"; sourceTree = "<group>"; };
+		1F782883170CDCF300C2981E /* UIViewController+HTUpdateAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HTUpdateAggregator.m"; sourceTree = "<group>"; };
 		1F93B07816FE944F0028BAC7 /* HTGradientListScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTGradientListScrollView.h; sourceTree = "<group>"; };
 		1F93B07916FE944F0028BAC7 /* HTGradientListScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGradientListScrollView.m; sourceTree = "<group>"; };
 		1F93B09C16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTKitDemoStoryboard.storyboard; sourceTree = "<group>"; };
@@ -311,6 +317,10 @@
 				1F96266416FED72D007836BB /* HTGraphicsUtilities.h */,
 				85C7D98DE5F4009009D8E340 /* NSObject+HTUpdateAggregator.h */,
 				85C7DAE4E91EB1F33D4E8117 /* NSObject+HTUpdateAggregator.m */,
+				1F78287F170CDBC900C2981E /* UIView+HTUpdateAggregator.h */,
+				1F782880170CDBC900C2981E /* UIView+HTUpdateAggregator.m */,
+				1F782882170CDCF300C2981E /* UIViewController+HTUpdateAggregator.h */,
+				1F782883170CDCF300C2981E /* UIViewController+HTUpdateAggregator.m */,
 				85C7DB0E8ECF52F7C84EB734 /* UIView+HTLayoutWatcher.h */,
 				85C7D00E7F914BB13B86CFE8 /* UIView+HTLayoutWatcher.m */,
 				85C7D79C644F5D6217E5208C /* NSObject+HTWatcher.h */,
@@ -460,6 +470,8 @@
 				8DDEAA51170CAE0D00F82D0E /* HTRootTableViewController.m in Sources */,
 				8D478BA3170CB3E600DD6121 /* HTSampleFieldsTableViewController.m in Sources */,
 				8D478BA6170CC38000DD6121 /* HTAutocompleteManager.m in Sources */,
+				1F782881170CDBC900C2981E /* UIView+HTUpdateAggregator.m in Sources */,
+				1F782884170CDCF400C2981E /* UIViewController+HTUpdateAggregator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,27 +13,16 @@
 //
 
 #import "NSObject+HTUpdateAggregator.h"
-#import <objc/runtime.h>
 #import "NSObject+HTWatcher.h"
+#import <objc/runtime.h>
 
 static NSString const *kUpdateNeededKey = @"UpdateNeededKey";
 
 @implementation NSObject (HTUpdateAggregator)
 
-+ (void)load
+- (void)startObservingForUpdates
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        method_exchangeImplementations(
-                class_getInstanceMethod([NSObject class], @selector(init)),
-                class_getInstanceMethod([NSObject class], @selector(initUpdateAggregator)));
-    });
-}
-
-- (id)initUpdateAggregator
-{
-    self = [self initUpdateAggregator];
-    if (self && [self conformsToProtocol:@protocol(HTUpdatable)])
+    if ([self conformsToProtocol:@protocol(HTUpdatable)])
     {
         if ([[self class] respondsToSelector:@selector(keyPathsToTriggerUpdate)])
         {
@@ -41,12 +30,11 @@ static NSString const *kUpdateNeededKey = @"UpdateNeededKey";
             [self observeKeypaths:[[self class] keyPathsToTriggerUpdate]
                  observingOptions:NSKeyValueObservingOptionNew
                         withBlock:^(NSString *keyPath, id object, NSDictionary *change)
-                        {
-                            [wSelf setNeedsUpdate];
-                        }];
+             {
+                 [wSelf setNeedsUpdate];
+             }];
         }
     }
-    return self;
 }
 
 - (void)setNeedsUpdate
