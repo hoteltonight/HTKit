@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="iRw-8n-Ymu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="iRw-8n-Ymu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -153,21 +153,6 @@
     <resources>
         <image name="ht-logo-black.png" width="140" height="68"/>
     </resources>
-    <classes>
-        <class className="HTAutocompleteTextField" superclassName="UITextField">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAutocompleteTextField.h"/>
-        </class>
-        <class className="HTEmailAutocompleteTextField" superclassName="HTAutocompleteTextField">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTEmailAutocompleteTextField.h"/>
-        </class>
-        <class className="HTSampleFieldsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSampleFieldsTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="emailTextField" candidateClass="HTEmailAutocompleteTextField"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="HTAutocompleteTextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -92,22 +92,22 @@ static NSObject<HTAutocompleteDataSource> *DefaultAutocompleteDataSource = nil;
 
 #pragma mark - UIResponder
 
-//- (BOOL)becomeFirstResponder
-//{
-//    // This is necessary because the textfield avoids tapping the autocomplete Button
-//    [self bringSubviewToFront:self.autocompleteButton];
-//    if (!self.autocompleteDisabled)
-//    {
-//        if ([self clearsOnBeginEditing])
-//        {
-//            self.autocompleteLabel.text = @"";
-//        }
-//        
-//        self.autocompleteLabel.hidden = NO;
-//    }
-//    
-//    return [super becomeFirstResponder];
-//}
+- (BOOL)becomeFirstResponder
+{
+    // This is necessary because the textfield avoids tapping the autocomplete Button
+    [self bringSubviewToFront:self.autocompleteButton];
+    if (!self.autocompleteDisabled)
+    {
+        if ([self clearsOnBeginEditing])
+        {
+            self.autocompleteLabel.text = @"";
+        }
+        
+        self.autocompleteLabel.hidden = NO;
+    }
+    
+    return [super becomeFirstResponder];
+}
 
 - (BOOL)resignFirstResponder
 {
