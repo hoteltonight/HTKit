@@ -39,13 +39,16 @@ static CGFloat const kCardTuckedYOffset = 60;
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor lightGrayColor];
         _cardView = [[UIView alloc] init];
-        _cardView.backgroundColor = [UIColor orangeColor];
-        _cardView.layer.cornerRadius = 8;
+        _cardView.backgroundColor = [UIColor greenColor];
+        _cardView.layer.cornerRadius = 10;
         [self addSubview:_cardView];
 
         _pocketView = [[UIView alloc] init];
-        _pocketView.backgroundColor = [UIColor grayColor];
+        _pocketView.backgroundColor = [UIColor blueColor];
+        _pocketView.layer.shadowRadius = 3;
+        _pocketView.layer.shadowOpacity = 0.6;
         [self addSubview:_pocketView];
     }
     return self;
@@ -66,7 +69,9 @@ static CGFloat const kCardTuckedYOffset = 60;
             .size.width = self.bounds.size.width + 120,
             .size.height = self.bounds.size.height
     };
+    self.pocketView.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.pocketView.bounds].CGPath;
     self.pocketView.transform = CGAffineTransformMakeRotation(M_PI / 32);
+
 
     switch (self.state)
     {
