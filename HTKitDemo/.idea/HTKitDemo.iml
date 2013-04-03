@@ -7,14 +7,32 @@
     <content url="file://$MODULE_DIR$/../HTGraphicsUtilities.h">
       <sourceFolder url="file://$MODULE_DIR$/../HTGraphicsUtilities.h" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../HTHighlightedShapeView.h">
+      <sourceFolder url="file://$MODULE_DIR$/../HTHighlightedShapeView.h" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../HTHighlightedShapeView.m">
+      <sourceFolder url="file://$MODULE_DIR$/../HTHighlightedShapeView.m" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../HTShapeView.h">
+      <sourceFolder url="file://$MODULE_DIR$/../HTShapeView.h" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../HTShapeView.m">
+      <sourceFolder url="file://$MODULE_DIR$/../HTShapeView.m" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../NSObject+HTUpdateAggregator.h">
       <sourceFolder url="file://$MODULE_DIR$/../NSObject+HTUpdateAggregator.h" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../NSObject+HTUpdateAggregator.m">
       <sourceFolder url="file://$MODULE_DIR$/../NSObject+HTUpdateAggregator.m" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../UIBezierPath+HTUtilities.h">
+      <sourceFolder url="file://$MODULE_DIR$/../UIBezierPath+HTUtilities.h" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../UIBezierPath+HTUtilities.m">
+      <sourceFolder url="file://$MODULE_DIR$/../UIBezierPath+HTUtilities.m" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../UIView+HTLayoutWatcher.h">
       <sourceFolder url="file://$MODULE_DIR$/../UIView+HTLayoutWatcher.h" isTestSource="false" />

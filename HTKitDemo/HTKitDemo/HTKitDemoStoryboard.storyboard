@@ -101,6 +101,33 @@
                                             <segue destination="7Tx-Pe-TZK" kind="push" id="Vew-C8-EhT"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="fKs-YH-qc4" detailTextLabel="3A7-fj-NN3" style="IBUITableViewCellStyleSubtitle" id="WlX-ek-07k">
+                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="HTCardView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fKs-YH-qc4">
+                                                    <rect key="frame" x="10" y="2" width="107" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Stateful layout / animation example" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3A7-fj-NN3">
+                                                    <rect key="frame" x="10" y="24" width="218" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="d2Q-it-99v" kind="push" id="hE0-7k-Tvh"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -231,6 +258,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5g-7E-bMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="883" y="57"/>
+        </scene>
+        <!--Card View Controller-->
+        <scene sceneID="5KG-J5-5yg">
+            <objects>
+                <viewController id="d2Q-it-99v" customClass="HTCardViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qvG-k3-in4" customClass="HTCardView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="delegate" destination="d2Q-it-99v" id="qEe-km-QJf"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="itE-7R-UFE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRf-DU-5Ig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-170" y="863"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vgA-l5-0df">
@@ -451,6 +496,15 @@
             <relationships>
                 <relationship kind="action" name="switchCarsTapped:"/>
             </relationships>
+        </class>
+        <class className="HTCardView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTCardView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+        <class className="HTCardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTCardViewController.h"/>
         </class>
         <class className="HTGradientListScrollView" superclassName="UIScrollView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HTGradientListScrollView.h"/>

@@ -27,6 +27,9 @@
 		1F7827E6170ABB1400C2981E /* HTCacheKeyCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827E2170ABB1400C2981E /* HTCacheKeyCollector.m */; };
 		1F7827EB170ABB1F00C2981E /* HTGeneratedImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827E8170ABB1F00C2981E /* HTGeneratedImagesViewController.m */; };
 		1F7827EC170ABB1F00C2981E /* HTGeneratedImageTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827EA170ABB1F00C2981E /* HTGeneratedImageTableCell.m */; };
+		1F7827EF170BD96F00C2981E /* HTRadialGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827EE170BD96F00C2981E /* HTRadialGradientView.m */; };
+		1F7827F3170BDA6B00C2981E /* HTCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827F2170BDA6B00C2981E /* HTCardViewController.m */; };
+		1F7827F6170BDA8100C2981E /* HTCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7827F5170BDA8100C2981E /* HTCardView.m */; };
 		1F93B07A16FE944F0028BAC7 /* HTGradientListScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93B07916FE944F0028BAC7 /* HTGradientListScrollView.m */; };
 		1F93B09D16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F93B09C16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard */; };
 		1F96265B16FEB0A3007836BB /* HTSARIVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96265A16FEB0A3007836BB /* HTSARIVViewController.m */; };
@@ -81,6 +84,12 @@
 		1F7827E8170ABB1F00C2981E /* HTGeneratedImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGeneratedImagesViewController.m; sourceTree = "<group>"; };
 		1F7827E9170ABB1F00C2981E /* HTGeneratedImageTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTGeneratedImageTableCell.h; sourceTree = "<group>"; };
 		1F7827EA170ABB1F00C2981E /* HTGeneratedImageTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGeneratedImageTableCell.m; sourceTree = "<group>"; };
+		1F7827ED170BD96F00C2981E /* HTRadialGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTRadialGradientView.h; sourceTree = "<group>"; };
+		1F7827EE170BD96F00C2981E /* HTRadialGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTRadialGradientView.m; sourceTree = "<group>"; };
+		1F7827F1170BDA6B00C2981E /* HTCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCardViewController.h; sourceTree = "<group>"; };
+		1F7827F2170BDA6B00C2981E /* HTCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCardViewController.m; sourceTree = "<group>"; };
+		1F7827F4170BDA8100C2981E /* HTCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCardView.h; sourceTree = "<group>"; };
+		1F7827F5170BDA8100C2981E /* HTCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCardView.m; sourceTree = "<group>"; };
 		1F93B07816FE944F0028BAC7 /* HTGradientListScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTGradientListScrollView.h; sourceTree = "<group>"; };
 		1F93B07916FE944F0028BAC7 /* HTGradientListScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGradientListScrollView.m; sourceTree = "<group>"; };
 		1F93B09C16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTKitDemoStoryboard.storyboard; sourceTree = "<group>"; };
@@ -161,6 +170,7 @@
 		1F1CF76816FE66FE004B0218 /* HTKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1F7827F0170BD9E700C2981E /* HTCard */,
 				1F96265C16FEBB2F007836BB /* HTCar */,
 				85C7D6FB23E78EEC3F59D7C9 /* HTKit */,
 				1F93B07E16FEA1000028BAC7 /* HTStateAwareRasterImageView */,
@@ -189,6 +199,17 @@
 			);
 			name = "Supporting Files";
 			path = HTKitDemo;
+			sourceTree = "<group>";
+		};
+		1F7827F0170BD9E700C2981E /* HTCard */ = {
+			isa = PBXGroup;
+			children = (
+				1F7827F1170BDA6B00C2981E /* HTCardViewController.h */,
+				1F7827F2170BDA6B00C2981E /* HTCardViewController.m */,
+				1F7827F4170BDA8100C2981E /* HTCardView.h */,
+				1F7827F5170BDA8100C2981E /* HTCardView.m */,
+			);
+			name = HTCard;
 			sourceTree = "<group>";
 		};
 		1F93B07716FE94450028BAC7 /* HTGradientEasing */ = {
@@ -243,6 +264,8 @@
 		85C7D6FB23E78EEC3F59D7C9 /* HTKit */ = {
 			isa = PBXGroup;
 			children = (
+				1F7827ED170BD96F00C2981E /* HTRadialGradientView.h */,
+				1F7827EE170BD96F00C2981E /* HTRadialGradientView.m */,
 				1F7827D4170AB9DB00C2981E /* HTShapeView.h */,
 				1F7827D5170AB9DB00C2981E /* HTShapeView.m */,
 				1F7827CE170AB99D00C2981E /* HTHighlightedShapeView.h */,
@@ -372,6 +395,9 @@
 				1F7827E6170ABB1400C2981E /* HTCacheKeyCollector.m in Sources */,
 				1F7827EB170ABB1F00C2981E /* HTGeneratedImagesViewController.m in Sources */,
 				1F7827EC170ABB1F00C2981E /* HTGeneratedImageTableCell.m in Sources */,
+				1F7827EF170BD96F00C2981E /* HTRadialGradientView.m in Sources */,
+				1F7827F3170BDA6B00C2981E /* HTCardViewController.m in Sources */,
+				1F7827F6170BDA8100C2981E /* HTCardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
