@@ -241,11 +241,22 @@
                                     <action selector="switchCarsTapped:" destination="JBo-VP-bNA" eventType="touchUpInside" id="mS7-qi-nOp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Simple dynamic view with some labels.  Check out the code progression from version 1 to 3 for some tips." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="gyx-bA-CAi">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Jlv-KW-D3U"/>
+                                    <constraint firstAttribute="height" constant="74" id="p8J-Vt-cn0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ZKj-QG-Llk" firstAttribute="top" secondItem="gyx-bA-CAi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="J2w-rI-aBx"/>
                             <constraint firstAttribute="bottom" secondItem="ZKj-QG-Llk" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="OFx-EB-ccP"/>
-                            <constraint firstItem="ZKj-QG-Llk" firstAttribute="centerX" secondItem="VhW-nX-sMk" secondAttribute="centerX" type="default" id="UNg-Ps-thc"/>
+                            <constraint firstItem="ZKj-QG-Llk" firstAttribute="centerX" secondItem="VhW-nX-sMk" secondAttribute="centerX" type="default" id="Rj7-xO-c8Q"/>
+                            <constraint firstItem="gyx-bA-CAi" firstAttribute="centerX" secondItem="ZKj-QG-Llk" secondAttribute="centerX" type="default" id="bUJ-uc-bZg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LbA-ee-rk3"/>
@@ -399,10 +410,21 @@
                                     <action selector="switchCarsTapped:" destination="DCa-cy-Bjv" eventType="touchUpInside" id="UHB-IP-B9b"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Simple dynamic view with some labels.  Check out the code progression from version 1 to 3 for some tips." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="zTM-Tp-GfX">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="CbV-Xq-0Hj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="vtc-jg-Bxa" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="3cy-Uj-pU9"/>
+                            <constraint firstItem="zTM-Tp-GfX" firstAttribute="leading" secondItem="AY1-VF-e0N" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="HdT-Xy-BhW"/>
+                            <constraint firstItem="zTM-Tp-GfX" firstAttribute="trailing" secondItem="AY1-VF-e0N" secondAttribute="trailing" type="default" id="kTW-HQ-rOS"/>
+                            <constraint firstItem="vtc-jg-Bxa" firstAttribute="top" secondItem="zTM-Tp-GfX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oMF-we-6j0"/>
                             <constraint firstItem="vtc-jg-Bxa" firstAttribute="centerX" secondItem="AY1-VF-e0N" secondAttribute="centerX" type="default" id="xD9-yo-fgu"/>
                         </constraints>
                     </view>
@@ -468,11 +490,22 @@
                                     <action selector="switchCarsTapped:" destination="Q4h-Pl-QrI" eventType="touchUpInside" id="f8I-eV-xLz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Simple dynamic view with some labels.  Check out the code progression from version 1 to 3 for some tips." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="Z6k-TW-PpS">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="8Ub-9o-5bm"/>
+                                    <constraint firstAttribute="width" constant="300" id="OU6-5L-WcB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Z6k-TW-PpS" firstAttribute="centerX" secondItem="1S5-kQ-zeV" secondAttribute="centerX" type="default" id="aNN-Sk-8ed"/>
                             <constraint firstAttribute="bottom" secondItem="1S5-kQ-zeV" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="kmN-6o-iXm"/>
-                            <constraint firstItem="1S5-kQ-zeV" firstAttribute="centerX" secondItem="dJe-ZB-AwD" secondAttribute="centerX" type="default" id="p2R-2Q-N7A"/>
+                            <constraint firstItem="Z6k-TW-PpS" firstAttribute="centerX" secondItem="dJe-ZB-AwD" secondAttribute="centerX" type="default" id="l8I-wT-3Ls"/>
+                            <constraint firstAttribute="bottom" secondItem="Z6k-TW-PpS" secondAttribute="bottom" constant="66" id="xPP-4O-25e"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1Qn-hY-0oN"/>

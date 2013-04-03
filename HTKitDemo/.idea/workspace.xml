@@ -97,7 +97,7 @@
             <file leaf-file-name="HTCarDetailsViewV1.m" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCarDetailsViewV1.m">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state line="135" column="1" selection-start="4903" selection-end="4903" vertical-scroll-proportion="0.48524925">
+                  <state line="157" column="7" selection-start="5510" selection-end="5510" vertical-scroll-proportion="0.8657172">
                     <folding />
                   </state>
                 </provider>
@@ -177,7 +177,7 @@
       <file leaf-file-name="HTCardView.m" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardView.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="39" selection-start="989" selection-end="989" vertical-scroll-proportion="0.5617816">
+            <state line="155" column="24" selection-start="4532" selection-end="4532" vertical-scroll-proportion="0.31609195">
               <folding>
                 <element signature="e#140#177#0" expanded="true" />
               </folding>
@@ -582,13 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCarDetailsViewV1.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="1" selection-start="4903" selection-end="4903" vertical-scroll-proportion="0.48524925">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../HTGraphicsUtilities.h">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="1" selection-start="1898" selection-end="1898" vertical-scroll-proportion="0.0">
@@ -626,9 +619,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCarDetailsViewV1.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="157" column="7" selection-start="5510" selection-end="5510" vertical-scroll-proportion="0.8657172">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HTKitDemo/HTCardView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="39" selection-start="989" selection-end="989" vertical-scroll-proportion="0.5617816">
+        <state line="155" column="24" selection-start="4532" selection-end="4532" vertical-scroll-proportion="0.31609195">
           <folding>
             <element signature="e#140#177#0" expanded="true" />
           </folding>
