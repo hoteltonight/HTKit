@@ -1,6 +1,8 @@
 HTKit
 =====
 
+Podspec and documentation coming soon!
+
 ## HTKit is a collection of tools used by the HotelTonight iOS team, including:
 
 HTCoreImage
