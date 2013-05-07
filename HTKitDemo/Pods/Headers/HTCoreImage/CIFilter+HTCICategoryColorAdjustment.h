@@ -1,0 +1,1 @@
+../../HTCoreImage/CIFilter+HTCICategoryColorAdjustment.h

@@ -10,6 +10,10 @@
 #import "NSObject+HTUpdateAggregator.h"
 #import <QuartzCore/QuartzCore.h>
 
+
+// See V1, V2 and V3 for incremental improvements!
+
+
 static UIEdgeInsets const kEdgeInsets = { .top = 6, .left = 6, .bottom = 6, .right = 6 };
 
 @interface HTCarDetailsViewV3()<HTUpdatable>

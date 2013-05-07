@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HTKitDemo/HTCarDetailsViewV1.m"
-         timestampString = "385856264.962354"
+         timestampString = "389656055.930836"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
+         startingLineNumber = "36"
+         endingLineNumber = "36"
          landmarkName = "@implementation HTCarDetailsViewV1"
          landmarkType = "3">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HTKitDemo/HTCarDetailsViewV2.m"
-         timestampString = "386578555.909134"
+         timestampString = "389656055.930836"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "101"
-         endingLineNumber = "101"
+         startingLineNumber = "105"
+         endingLineNumber = "105"
          landmarkName = "-sizeThatFits:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HTKitDemo/HTCarDetailsViewV1.m"
-         timestampString = "386578025.299901"
+         timestampString = "389656055.930836"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "100"
-         endingLineNumber = "100"
+         startingLineNumber = "104"
+         endingLineNumber = "104"
          landmarkName = "-sizeThatFits:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HTKitDemo/HTCarDetailsViewV2.m"
-         timestampString = "386578555.909134"
+         timestampString = "389656055.930836"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
+         startingLineNumber = "115"
+         endingLineNumber = "115"
          landmarkName = "-updateContent"
          landmarkType = "5">
       </FileBreakpoint>
@@ -66,6 +66,19 @@
          startingLineNumber = "18"
          endingLineNumber = "18"
          landmarkName = "-setupAutocompleteTextField"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "HTKitDemo/HTGradientListScrollView.m"
+         timestampString = "389655786.283897"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "111"
+         endingLineNumber = "111"
+         landmarkName = "-layoutSubviews"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

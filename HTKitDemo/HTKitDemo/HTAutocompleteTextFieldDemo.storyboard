@@ -153,6 +153,21 @@
     <resources>
         <image name="ht-logo-black.png" width="140" height="68"/>
     </resources>
+    <classes>
+        <class className="HTAutocompleteTextField" superclassName="UITextField">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAutocompleteTextField.h"/>
+        </class>
+        <class className="HTEmailAutocompleteTextField" superclassName="HTAutocompleteTextField">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTEmailAutocompleteTextField.h"/>
+        </class>
+        <class className="HTSampleFieldsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSampleFieldsTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="emailTextField" candidateClass="HTEmailAutocompleteTextField"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="HTAutocompleteTextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

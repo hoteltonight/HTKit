@@ -5,8 +5,16 @@ HTRasterView
 
 ## Overview
 
-HTStateAwareRasterImageView is a rasterization system that caches rendered components based on state.  The advantage over Core Animation's rasterization is that you only draw a component once for each unique state.  Asynchronous drawing is also supported.
-Associated blog post at http://engineering.hoteltonight.com/asynchronous-state-aware-component-rasterizat
+HTRasterView is a rasterization system that caches rendered components based on state.  A few advantages over Core Animation's rasterization:
+
+* You only draw a component once for each unique state
+* Asynchronous drawing is supported for non-nested use cases
+* Intelligent cached component nesting
+* Components that support edge capping (resizable UIImage) render in their smallest possible frame (performance gain)
+* 'Precompute' GPU-intensive operations like alpha compositing and masking into a single image
+* Switch manually between rasterized version and actual component
+
+Check out the associated blog post at http://engineering.hoteltonight.com/asynchronous-state-aware-component-rasterizat
 
 ## Installation
 
@@ -30,10 +38,10 @@ This is used for two purposes: <br/>
 Initialize a HTStateAwareRasterImageView and set the rasterizableView property to your HTRasterizableView, like this snippet from the demo project:
 
     _rasterizableComponent = [[HTExampleRasterizableComponent alloc] init];
-    _stateAwareRasterImageView = [[HTStateAwareRasterImageView alloc] init];
-    _stateAwareRasterImageView.rasterizableView = _rasterizableComponent;
-    _stateAwareRasterImageView.delegate = self;
-    [self addSubview:_stateAwareRasterImageView];
+    _rasterView = [[HTRasterView alloc] init];
+    _rasterView.rasterizableView = _rasterizableComponent;
+    _rasterView.delegate = self;
+    [self addSubview:_rasterView];
 
 
 If your component can take advantage of UIImage caps (fixed-size corners and stretchable center), these two methods are optional on the HTRasterizableView protocol: <br/>
@@ -41,7 +49,7 @@ If your component can take advantage of UIImage caps (fixed-size corners and str
     - (UIEdgeInsets)capEdgeInsets;
     - (BOOL)useMinimumFrameForCaps;
 
-You can specify if you want drawing to occur synchronously on the main thread:
+You can specify if you want drawing to occur synchronously on the main thread (async doesn't work with nesting):
 
     @property (nonatomic, assign) BOOL drawsOnMainThread;
 
@@ -63,7 +71,7 @@ For debugging purposes, the cache key is available through this method.
 
 The demo project has four tabs: 
 
-* A tableview taking advantage of HTStateAwareRasterImageView
+* A tableview taking advantage of HTRasterView
 * A tableview that displays cache key, actual size and cell-height sized cached images
 * A tableview that uses the same component without rasterization
 * A tableview that uses the same component with Core Animation rasterization enabled

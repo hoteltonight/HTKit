@@ -25,8 +25,19 @@
 
 @end
 
+@protocol HTStateTrackable <NSObject>
+
+- (NSArray *)keyPathsThatAffectState;
+
+@end
+
 @interface NSObject (HTPropertyHash)
 
 - (NSString *)hashStringForKeyPaths:(NSArray *)propertyNames;
+
+// Only useful if self conforms to HTStateTrackable
+@property (nonatomic, assign) BOOL shouldTrackState;
+@property (nonatomic, strong) NSString *stateHash;
+- (void)calculateStateHash;
 
 @end

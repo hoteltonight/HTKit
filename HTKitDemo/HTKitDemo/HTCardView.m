@@ -19,7 +19,7 @@
 
 static CGSize const kCardSize = (CGSize){ .width = 260, .height = 356 };
 static CGFloat const kDistanceAbovePocketToPullCard = 12;
-static CGFloat const kCardTuckedYOffset = 60;
+static CGFloat const kCardTuckedYOffset = 50;
 
 @interface HTCardView()
 
@@ -77,7 +77,6 @@ static CGFloat const kCardTuckedYOffset = 60;
     };
     self.pocketView.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.pocketView.bounds].CGPath;
     self.pocketView.transform = CGAffineTransformMakeRotation(M_PI / 32);
-
 
     switch (self.state)
     {

@@ -11,17 +11,18 @@
 
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import <QuartzCore/QuartzCore.h>
 #import "HTRasterView.h"
 #import "NSObject+HTPropertyHash.h"
 #import "MSCachedAsyncViewDrawing.h"
 #import "UIView+HTRaster.h"
+#import <QuartzCore/QuartzCore.h>
 
 // Uncommenting this SLOWS THINGS DOWN A LOT and will save all images to disk
-//#define HT_DEBUG_SAVEFILES YES
+//#define HT_DEBUG_SAVEFILES 1
 
-//#define HT_DEBUG_RASTERLOG YES
-//#define HT_DEBUG_VERBOSE YES
+//#define HT_DEBUG_RASTERLEVEL 1
+//#define HT_DEBUG_RASTERLEVEL 2
+//#define HT_DEBUG_RASTERLEVEL 3
 
 @interface HTRasterView ()
 
@@ -29,11 +30,13 @@
 @property (nonatomic, assign) BOOL implementsUseMinimumSizeForCaps;
 @property (nonatomic, assign) BOOL implementsCapEdgeInsets;
 @property (nonatomic, assign) BOOL implementsShadowPath;
+@property (nonatomic, assign) BOOL implementsPlaceholderImage;
+@property (nonatomic, strong) UIImageView *placeholderImageView;
 @property (atomic, strong) NSOperation *drawingOperation;
 @property (atomic, strong) NSString *currentRenderingCacheKey; // For avoiding race conditions while drawsOnMainThread = NO
-@property (nonatomic, strong) NSMutableArray *descendantRasterViews;
 @property (nonatomic, strong) UIView<HTRasterizableView> *rasterizableViewAsSubview;
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, assign) BOOL loaded;
 
 @end
 
@@ -47,9 +50,10 @@
     {
         _kvoEnabled = YES;
         _drawsOnMainThread = YES;
-        _descendantRasterViews = [NSMutableArray array];
         _rasterized = YES;
         _imageView = [[UIImageView alloc] init];
+        _imageView.opaque = YES;
+        _loaded = YES;
         [self addSubview:_imageView];
     }
     return self;
@@ -58,17 +62,17 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
+
     if (self.rasterizableView)
     {
         [self layoutRasterizableView];
+        [self regenerateImage:nil];
     }
     self.rasterizableViewAsSubview.frame = self.bounds;
     self.imageView.frame = self.bounds;
+    self.placeholderImageView.frame = self.bounds;
     [self.imageView layoutIfNeeded];
-    
-    [self regenerateImage:nil];
-    
+
     if (self.implementsShadowPath)
     {
         self.layer.shadowPath = [self.rasterizableView rasterViewShadowPathForBounds:self.bounds].CGPath;
@@ -79,17 +83,17 @@
 {
     CGSize size = self.bounds.size;
     UIEdgeInsets edgeInsets = [self capEdgeInsets];
-    
+
     if ([self useMinimumCapSize])
     {
-#ifdef HT_DEBUG_VERBOSE
+#if HT_DEBUG_RASTERLEVEL >= 3
         NSLog(@"Using minimum cap size for %@", NSStringFromClass([self.rasterizableView class]));
 #endif
         size = CGSizeMake(edgeInsets.left + edgeInsets.right + 1, edgeInsets.top + edgeInsets.bottom + 1);
     }
-    
+
     self.rasterizableView.frame = (CGRect){ .origin = CGPointZero, .size = size };
-    [self.rasterizableView layoutSubtreeIfNeeded];
+    [self.rasterizableView layoutIfNeeded];
 }
 
 - (void)dealloc
@@ -103,6 +107,11 @@
 
 - (void)setRasterizableView:(UIView<HTRasterizableView> *)rasterizableView
 {
+    [self setRasterizableView:rasterizableView generatePlaceholder:YES];
+}
+
+- (void)setRasterizableView:(UIView<HTRasterizableView> *)rasterizableView generatePlaceholder:(BOOL)generatePlaceholder
+{
     [self removeAllObservers];
     _rasterizableView.htRasterImageView = nil;
     _rasterizableView = rasterizableView;
@@ -111,12 +120,18 @@
         return;
     }
     _rasterizableView.htRasterImageView = self;
-    
-    self.implementsShouldRasterize = [self.rasterizableView respondsToSelector:@selector(shouldRegenerateRasterForKeyPath:change:)];
+
+    self.implementsShouldRasterize = [self.rasterizableView respondsToSelector:@selector(shouldRegenerateRaster)];
     self.implementsUseMinimumSizeForCaps = [self.rasterizableView respondsToSelector:@selector(useMinimumFrameForCaps)];
     self.implementsCapEdgeInsets = [self.rasterizableView respondsToSelector:@selector(capEdgeInsets)];
     self.implementsShadowPath = [self.rasterizableView respondsToSelector:@selector(rasterViewShadowPathForBounds:)];
-    
+    self.implementsPlaceholderImage = [self.rasterizableView respondsToSelector:@selector(placeholderImage)];
+
+    if (generatePlaceholder)
+    {
+        [self generatePlaceholder];
+    }
+
     if (self.implementsShadowPath)
     {
         self.layer.shadowRadius = self.rasterizableView.layer.shadowRadius;
@@ -128,12 +143,22 @@
     {
         self.layer.shadowOpacity = 0;
     }
-    
-    for (NSString *propertyName in [rasterizableView keyPathsThatAffectState])
-    {
-        [rasterizableView addObserver:self forKeyPath:propertyName options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
-    }
+
+    rasterizableView.shouldTrackState = YES;
+    [rasterizableView addObserver:self forKeyPath:@"stateHash" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+
     [self setNeedsLayout];
+}
+
+- (void)generatePlaceholder
+{
+    if (self.implementsPlaceholderImage)
+    {
+        [self.placeholderImageView removeFromSuperview];
+        self.placeholderImageView = [[UIImageView alloc] initWithImage:[self.rasterizableView placeholderImage]];
+        [self insertSubview:self.placeholderImageView atIndex:0];
+        self.imageView.image = nil;
+    }
 }
 
 - (void)setRasterized:(BOOL)rasterized
@@ -146,7 +171,7 @@
     if (rasterized)
     {
         [self.rasterizableViewAsSubview removeFromSuperview];
-        self.rasterizableView = self.rasterizableViewAsSubview;
+        [self setRasterizableView:self.rasterizableViewAsSubview generatePlaceholder:NO];
         self.rasterizableViewAsSubview = nil;
     }
     else
@@ -156,6 +181,7 @@
         self.rasterizableView = nil;
         [self setNeedsLayout];
     }
+    self.imageView.hidden = !rasterized;
 }
 
 - (UIImage *)image
@@ -167,29 +193,13 @@
 
 - (void)removeAllObservers;
 {
-    for (NSString *propertyName in [self.rasterizableView keyPathsThatAffectState])
-    {
-        [_rasterizableView removeObserver:self forKeyPath:propertyName];
-    }
+    [_rasterizableView removeObserver:self forKeyPath:@"stateHash"];
+    _rasterizableView.shouldTrackState = NO;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (!self.kvoEnabled)
-    {
-        return;
-    }
-    if (self.implementsShouldRasterize)
-    {
-        if (![self.rasterizableView shouldRegenerateRasterForKeyPath:keyPath change:change])
-        {
-            return;
-        }
-    }
-    
-    id old = change[NSKeyValueChangeOldKey];
-    id new = change[NSKeyValueChangeNewKey];
-    if ([new isEqual:old])
     {
         return;
     }
@@ -213,89 +223,109 @@
 
 - (void)regenerateImage:(HTSARIVVoidBlock)complete
 {
-#ifdef HT_DEBUG_VERBOSE
-    NSLog(@"Potential regenerate %@", NSStringFromClass([self.rasterizableView class]));
-#endif
     if (!self.rasterizableView)
     {
         return;
+    }
+    if (self.implementsShouldRasterize)
+    {
+        if (![self.rasterizableView shouldRegenerateRaster])
+        {
+#if HT_DEBUG_RASTERLEVEL >= 3
+            NSLog(@"Cancelled regenerate via shouldRegenerateRaster: %@", NSStringFromClass([self.rasterizableView class]));
+#endif
+            return;
+        }
     }
     [self layoutRasterizableView];
     CGSize size = self.rasterizableView.bounds.size;
     if ((size.width < 1 || size.height < 1))
     {
-#ifdef HT_DEBUG_VERBOSE
+#if HT_DEBUG_RASTERLEVEL >= 3
         NSLog(@"Too small %@", NSStringFromClass([self.rasterizableView class]));
 #endif
         return;
     }
     __block NSString *cacheKey = [self cacheKey];
-    //#ifdef HT_DEBUG_RASTERLOG
-    //    NSLog(@"%d Maybe drawing cache instance: %d\n", (int)self, (int)cacheKey);
-    //#endif
-    __unsafe_unretained HTRasterView *bSelf = self;
-    MSCachedAsyncViewDrawingDrawBlock drawBlock = ^(CGRect frame, CGContextRef context)
+#if HT_DEBUG_RASTERLEVEL >= 2
+        NSLog(@"%d Maybe drawing cache instance: %d\n", (int)self, (int)cacheKey);
+#endif
+    __weak HTRasterView *wSelf = self;
+    MSCachedAsyncViewDrawingDrawBlock drawBlock = ^ BOOL (CGRect frame, CGContextRef context)
     {
-        if (self.currentRenderingCacheKey != cacheKey)
+        if (cacheKey != self.currentRenderingCacheKey || cacheKey != [self cacheKey])
         {
-            return;
+            return NO;
         }
-        if ([bSelf.delegate respondsToSelector:@selector(rasterViewWillRegenerateImage:)])
+        if ([wSelf.delegate respondsToSelector:@selector(rasterViewWillRegenerateImage:)])
         {
-            [bSelf.delegate rasterViewWillRegenerateImage:bSelf];
+            [wSelf.delegate rasterViewWillRegenerateImage:wSelf];
         }
-        [bSelf.rasterizableView layoutSubtreeIfNeeded];
-        [bSelf.rasterizableView drawRect:frame inContext:context];
-        //#ifdef HT_DEBUG_RASTERLOG
-        //        NSLog(@"%d Drawing: key instance: %d\n\n", (int)self, (int)cacheKey);
-        //#endif
+        [wSelf.rasterizableView drawRect:frame inContext:context];
+        if (cacheKey != self.currentRenderingCacheKey || cacheKey != [self cacheKey])
+        {
+            return NO;
+        }
+#if HT_DEBUG_RASTERLEVEL >= 2
+        NSLog(@"%d Drawing: key instance: %d\n\n", (int)wSelf, (int)cacheKey);
+#endif
+        return YES;
     };
-    
+
     MSCachedAsyncViewDrawingCompletionBlock completionBlock = ^(UIImage *drawnImage)
     {
         if (self.currentRenderingCacheKey != cacheKey)
         {
-            //            NSLog(@"NOT USING %d BECAUSE != current %d", (int)cacheKey, (int)self.currentRenderingCacheKey);
             return;
         }
         if (!drawnImage)
         {
             return;
         }
-        if (drawnImage != bSelf.imageView.image)
+        if (drawnImage != wSelf.imageView.image)
         {
-#ifdef HT_DEBUG_RASTERLOG
-            NSLog(@"%d Using key instance: %d, Key: \n%@\n\n", (int)self, (int)cacheKey, cacheKey);
+#if HT_DEBUG_RASTERLEVEL >= 1
+            NSLog(@"%d Using key instance: %d, Key: \n%@\n\n", (int)wSelf, (int)cacheKey, cacheKey);
 #endif
-            
-            bSelf.imageView.image = drawnImage;
-            [self informFirstAncestorRasterImageViewThatWeRegenerated];
+
+            wSelf.imageView.image = drawnImage;
+            if (wSelf.placeholderImageView)
+            {
+                wSelf.imageView.alpha = 0;
+                [UIView animateWithDuration:0.25
+                                      delay:0
+                                    options:UIViewAnimationOptionCurveEaseInOut
+                                 animations:^{
+                                     self.imageView.alpha = 1;
+                                 }
+                                 completion:^(BOOL finished) {
+                                     wSelf.placeholderImageView = nil;
+                                 }];
+            }
         }
-        
-        if ([bSelf.delegate respondsToSelector:@selector(rasterViewImageLoaded:)])
+        self.loaded = YES;
+        if ([wSelf.delegate respondsToSelector:@selector(rasterViewImageLoaded:)])
         {
-            [bSelf.delegate rasterViewImageLoaded:bSelf];
+            [wSelf.delegate rasterViewImageLoaded:wSelf];
         }
-        
-#ifdef HT_DEBUG_SAVEFILES
-        NSString *fileName = [NSString stringWithFormat:@"/%@-%u.jpg", NSStringFromClass([bSelf.rasterizableView class]), [cacheKey hash]];
-        NSData *imageData = UIImageJPEGRepresentation(drawnImage, 1);
+
+#if HT_DEBUG_SAVEFILES
+        NSString *fileName = [NSString stringWithFormat:@"/%@-%u.png", NSStringFromClass([wSelf.rasterizableView class]), [cacheKey hash]];
+        NSData *imageData = UIImagePNGRepresentation(drawnImage);
         NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
                                stringByAppendingPathComponent:fileName];
         [imageData writeToFile:imagePath atomically:YES];
 #endif
-        
+
         if (complete) complete();
     };
-    
+
     [self.drawingOperation cancel];
-#ifdef HT_DEBUG_VERBOSE
+#if HT_DEBUG_RASTERLEVEL >= 3
     NSLog(@"actual regen %@ size: %@", NSStringFromClass([self.rasterizableView class]), NSStringFromCGSize(size));
 #endif
-    if (self.drawsOnMainThread)
-    {
-        self.currentRenderingCacheKey = cacheKey;
-    }
+    self.currentRenderingCacheKey = cacheKey;
+    self.loaded = NO;
     self.drawingOperation = [[MSCachedAsyncViewDrawing sharedInstance] drawViewSynchronous:self.drawsOnMainThread
                                                                               withCacheKey:cacheKey
                                                                                       size:size
@@ -305,84 +335,15 @@
                                                                            completionBlock:completionBlock];
 }
 
-- (void)informFirstAncestorRasterImageViewThatWeRegenerated
-{
-    [[self firstAncestorRasterizableView].htRasterImageView regenerateImage:nil];
-}
-
 - (NSString *)cacheKey
 {
-#ifdef HT_DEBUG_RASTERLOG
-    NSMutableString *cacheString = [[[self.rasterizableView hashStringForKeyPaths:[self.rasterizableView keyPathsThatAffectState]] stringByReplacingOccurrencesOfString:@"\n"
-                                                                                                                                                             withString:@" "] mutableCopy];
-    
-    for (HTRasterView *descendantRasterImageView in self.descendantRasterViews)
-    {
-        NSString *descendantCacheKey = [[descendantRasterImageView cacheKey] stringByReplacingOccurrencesOfString:@"\n"
-                                                                                                       withString:@"\n\t"];
-        [cacheString appendFormat:@"\n\t%@", descendantCacheKey];
-    }
-#else
-    NSMutableString *cacheString = [[self.rasterizableView hashStringForKeyPaths:[self.rasterizableView keyPathsThatAffectState]] mutableCopy];
-    
-    for (HTRasterView *descendantRasterImageView in self.descendantRasterViews)
-    {
-        [cacheString appendString:[descendantRasterImageView cacheKey]];
-    }
-#endif
-    
-    return [cacheString copy];
+    NSString *cacheString = [self.rasterizableView stateHash];
+    return cacheString;
 }
 
 - (void)willMoveToWindow:(UIWindow *)newWindow
 {
     [self regenerateImage:nil];
-}
-
-#pragma mark - Touch forwarding
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
-{
-    if (!self.gestureRecognizers || ![self.gestureRecognizers count]) {
-        [self.rasterizableView touchesBegan:touches withEvent:event];
-    }
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
-{
-    if (!self.gestureRecognizers || ![self.gestureRecognizers count]) {
-        [self.rasterizableView touchesMoved:touches withEvent:event];
-    }
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
-{
-    if (!self.gestureRecognizers || ![self.gestureRecognizers count]) {
-        [self.rasterizableView touchesEnded:touches withEvent:event];
-    }
-}
-
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
-{
-    if (!self.gestureRecognizers || ![self.gestureRecognizers count]) {
-        [self.rasterizableView touchesCancelled:touches withEvent:event];
-    }
-}
-
-#pragma mark - Descendant rasterization
-
-- (void)registerDescendantRasterView:(HTRasterView *)descendant
-{
-    [self.descendantRasterViews addObject:descendant];
-    [self.descendantRasterViews sortUsingComparator:^NSComparisonResult(HTRasterView *obj1, HTRasterView *obj2) {
-        return [NSStringFromClass([obj1.rasterizableView class]) compare:NSStringFromClass([obj2.rasterizableView class])];
-    }];
-    [self regenerateImage:nil];
-}
-
-- (void)unregisterDescendantRasterView:(HTRasterView *)descendant
-{
-    [self.descendantRasterViews removeObject:descendant];
 }
 
 - (NSString *)description
