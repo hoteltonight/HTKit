@@ -30,4 +30,4 @@ pod 'HTKit'
 
 ## Use it? Love/hate it?
 
-Tweet the authors @jakejennings, @jonsibs, and @raylillywhite, and check out HotelTonight's engineering blog: http://engineering.hoteltonight.com
+Tweet the authors @jakejennings, @jonsibs, @raylillywhite and @andylavoy, and check out HotelTonight's engineering blog: http://engineering.hoteltonight.com
