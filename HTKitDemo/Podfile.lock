@@ -10,6 +10,8 @@ PODS:
     - HTRasterView (~> 1.2.9)
   - HTRasterView (1.2.9):
     - JJCachedAsyncViewDrawing (~> 1.0.1)
+  - HTUpdateAggregator (1.0.0):
+    - SFObservers
   - JJCachedAsyncViewDrawing (1.0.1)
   - SFObservers (1.0)
   - UIColor-CrossFade (0.0.1)
@@ -22,6 +24,7 @@ DEPENDENCIES:
   - HTGradientEasing
   - HTGraphics
   - HTRasterView
+  - HTUpdateAggregator
   - SFObservers
   - UIViewPlusPosition
 
@@ -33,6 +36,7 @@ SPEC CHECKSUMS:
   HTGradientEasing: e764de9c1790b8957f8987fb543246a76ea06bc4
   HTGraphics: ef88df993f4a42189f05213be11ed648c3535481
   HTRasterView: fc7a10f30c93b7fec055fabc2256bdb264f5ef7b
+  HTUpdateAggregator: d68724ffbb6621f5b92bc48f9c33d64e608f48af
   JJCachedAsyncViewDrawing: e1bd4da8b958213c83c25418ba5f480f650322c0
   SFObservers: c73182a89feb75caec41f78c65d6ca00149c7e75
   UIColor-CrossFade: afd26f1e60caa96184b0e894736b38039507c46e

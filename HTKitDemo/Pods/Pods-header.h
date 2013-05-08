@@ -8,6 +8,7 @@
 #define __POD_HTGradientEasing
 #define __POD_HTGraphics
 #define __POD_HTRasterView
+#define __POD_HTUpdateAggregator
 #define __POD_JJCachedAsyncViewDrawing
 #define __POD_SFObservers
 #define __POD_UIColor_CrossFade

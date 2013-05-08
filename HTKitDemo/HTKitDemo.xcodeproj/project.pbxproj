@@ -33,14 +33,8 @@
 		1F96265B16FEB0A3007836BB /* HTSARIVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96265A16FEB0A3007836BB /* HTSARIVViewController.m */; };
 		1F96266316FED254007836BB /* HTCarDetailsViewV1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F96266216FED254007836BB /* HTCarDetailsViewV1.m */; };
 		1F96266C16FFB404007836BB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F96266B16FFB404007836BB /* QuartzCore.framework */; };
-		1FAE0C291739AA7300AAD3C1 /* HTWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE0C201739AA7300AAD3C1 /* HTWatcher.m */; };
-		1FAE0C2A1739AA7300AAD3C1 /* NSObject+HTWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE0C221739AA7300AAD3C1 /* NSObject+HTWatcher.m */; };
-		1FAE0C2B1739AA7300AAD3C1 /* UIView+HTUpdateAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE0C241739AA7300AAD3C1 /* UIView+HTUpdateAggregator.m */; };
-		1FAE0C2C1739AA7300AAD3C1 /* UIViewController+HTUpdateAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE0C261739AA7300AAD3C1 /* UIViewController+HTUpdateAggregator.m */; };
 		406BC3B32427446EB78F1565 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10112E1A5BD44B6AB799FA60 /* libPods.a */; };
 		85C7D0ECCDA30761C4A4D28A /* HTCarDetailsViewV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C7DEE5215BC3C18F246C12 /* HTCarDetailsViewV2.m */; };
-		85C7D25E0FAD2FDBE2F29EB2 /* UIView+HTLayoutWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C7D00E7F914BB13B86CFE8 /* UIView+HTLayoutWatcher.m */; };
-		85C7D2925942C113ABD486F7 /* NSObject+HTUpdateAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C7DAE4E91EB1F33D4E8117 /* NSObject+HTUpdateAggregator.m */; };
 		85C7D7C7FA3726C359044634 /* HTCarDetailsViewV3.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C7DDE6B49C7F414F2AC04C /* HTCarDetailsViewV3.m */; };
 		85C7D86E793F28934E1F1510 /* HTCarSwitcherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C7D56A0002E24833405534 /* HTCarSwitcherView.m */; };
 		85C7D9A0E1B9F32B22A9E756 /* HTCarSwitcherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C7D1D6B79504C258C49A2A /* HTCarSwitcherViewController.m */; };
@@ -100,23 +94,11 @@
 		1F96266216FED254007836BB /* HTCarDetailsViewV1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCarDetailsViewV1.m; sourceTree = "<group>"; };
 		1F96266A16FFA166007836BB /* HTCarDetailsProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTCarDetailsProtocol.h; sourceTree = "<group>"; };
 		1F96266B16FFB404007836BB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		1FAE0C1F1739AA7300AAD3C1 /* HTWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTWatcher.h; path = ../../HTWatcher.h; sourceTree = "<group>"; };
-		1FAE0C201739AA7300AAD3C1 /* HTWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTWatcher.m; path = ../../HTWatcher.m; sourceTree = "<group>"; };
-		1FAE0C211739AA7300AAD3C1 /* NSObject+HTWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+HTWatcher.h"; path = "../../NSObject+HTWatcher.h"; sourceTree = "<group>"; };
-		1FAE0C221739AA7300AAD3C1 /* NSObject+HTWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+HTWatcher.m"; path = "../../NSObject+HTWatcher.m"; sourceTree = "<group>"; };
-		1FAE0C231739AA7300AAD3C1 /* UIView+HTUpdateAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+HTUpdateAggregator.h"; path = "../../UIView+HTUpdateAggregator.h"; sourceTree = "<group>"; };
-		1FAE0C241739AA7300AAD3C1 /* UIView+HTUpdateAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+HTUpdateAggregator.m"; path = "../../UIView+HTUpdateAggregator.m"; sourceTree = "<group>"; };
-		1FAE0C251739AA7300AAD3C1 /* UIViewController+HTUpdateAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+HTUpdateAggregator.h"; path = "../../UIViewController+HTUpdateAggregator.h"; sourceTree = "<group>"; };
-		1FAE0C261739AA7300AAD3C1 /* UIViewController+HTUpdateAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+HTUpdateAggregator.m"; path = "../../UIViewController+HTUpdateAggregator.m"; sourceTree = "<group>"; };
 		40556E818D844D5196766693 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		85C7D00E7F914BB13B86CFE8 /* UIView+HTLayoutWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+HTLayoutWatcher.m"; path = "../../UIView+HTLayoutWatcher.m"; sourceTree = "<group>"; };
 		85C7D1D6B79504C258C49A2A /* HTCarSwitcherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCarSwitcherViewController.m; sourceTree = "<group>"; };
 		85C7D454A7A19194D6B5C14D /* HTCarDetailsViewV3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCarDetailsViewV3.h; sourceTree = "<group>"; };
 		85C7D56A0002E24833405534 /* HTCarSwitcherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCarSwitcherView.m; sourceTree = "<group>"; };
 		85C7D809AD281810A023B9B4 /* HTCarSwitcherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCarSwitcherView.h; sourceTree = "<group>"; };
-		85C7D98DE5F4009009D8E340 /* NSObject+HTUpdateAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+HTUpdateAggregator.h"; path = "../../NSObject+HTUpdateAggregator.h"; sourceTree = "<group>"; };
-		85C7DAE4E91EB1F33D4E8117 /* NSObject+HTUpdateAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+HTUpdateAggregator.m"; path = "../../NSObject+HTUpdateAggregator.m"; sourceTree = "<group>"; };
-		85C7DB0E8ECF52F7C84EB734 /* UIView+HTLayoutWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+HTLayoutWatcher.h"; path = "../../UIView+HTLayoutWatcher.h"; sourceTree = "<group>"; };
 		85C7DDE6B49C7F414F2AC04C /* HTCarDetailsViewV3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCarDetailsViewV3.m; sourceTree = "<group>"; };
 		85C7DE5D4A4C5315366B997A /* HTCarDetailsViewV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCarDetailsViewV2.h; sourceTree = "<group>"; };
 		85C7DEE5215BC3C18F246C12 /* HTCarDetailsViewV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCarDetailsViewV2.m; sourceTree = "<group>"; };
@@ -186,7 +168,6 @@
 				1F782878170C094400C2981E /* HTHighlightedShapeView */,
 				1F7827F0170BD9E700C2981E /* HTCard */,
 				1F96265C16FEBB2F007836BB /* HTCar */,
-				85C7D6FB23E78EEC3F59D7C9 /* HTKit */,
 				1F93B07E16FEA1000028BAC7 /* HTRasterView */,
 				1F93B07716FE94450028BAC7 /* HTGradientEasing */,
 				1F1CF77116FE66FE004B0218 /* HTAppDelegate.h */,
@@ -286,25 +267,6 @@
 				85C7DDE6B49C7F414F2AC04C /* HTCarDetailsViewV3.m */,
 			);
 			name = HTCar;
-			sourceTree = "<group>";
-		};
-		85C7D6FB23E78EEC3F59D7C9 /* HTKit */ = {
-			isa = PBXGroup;
-			children = (
-				1FAE0C1F1739AA7300AAD3C1 /* HTWatcher.h */,
-				1FAE0C201739AA7300AAD3C1 /* HTWatcher.m */,
-				1FAE0C211739AA7300AAD3C1 /* NSObject+HTWatcher.h */,
-				1FAE0C221739AA7300AAD3C1 /* NSObject+HTWatcher.m */,
-				1FAE0C231739AA7300AAD3C1 /* UIView+HTUpdateAggregator.h */,
-				1FAE0C241739AA7300AAD3C1 /* UIView+HTUpdateAggregator.m */,
-				1FAE0C251739AA7300AAD3C1 /* UIViewController+HTUpdateAggregator.h */,
-				1FAE0C261739AA7300AAD3C1 /* UIViewController+HTUpdateAggregator.m */,
-				85C7D98DE5F4009009D8E340 /* NSObject+HTUpdateAggregator.h */,
-				85C7DAE4E91EB1F33D4E8117 /* NSObject+HTUpdateAggregator.m */,
-				85C7DB0E8ECF52F7C84EB734 /* UIView+HTLayoutWatcher.h */,
-				85C7D00E7F914BB13B86CFE8 /* UIView+HTLayoutWatcher.m */,
-			);
-			name = HTKit;
 			sourceTree = "<group>";
 		};
 		8DDEAA52170CAE1B00F82D0E /* HTAutocompleteTextFieldDemo */ = {
@@ -418,8 +380,6 @@
 				1F1CF77316FE66FE004B0218 /* HTAppDelegate.m in Sources */,
 				1F1CF77C16FE66FE004B0218 /* HTViewController.m in Sources */,
 				1F93B07A16FE944F0028BAC7 /* HTGradientListScrollView.m in Sources */,
-				85C7D2925942C113ABD486F7 /* NSObject+HTUpdateAggregator.m in Sources */,
-				85C7D25E0FAD2FDBE2F29EB2 /* UIView+HTLayoutWatcher.m in Sources */,
 				1F96265B16FEB0A3007836BB /* HTSARIVViewController.m in Sources */,
 				1F96266316FED254007836BB /* HTCarDetailsViewV1.m in Sources */,
 				85C7D9A0E1B9F32B22A9E756 /* HTCarSwitcherViewController.m in Sources */,
@@ -440,10 +400,6 @@
 				8DDEAA51170CAE0D00F82D0E /* HTRootTableViewController.m in Sources */,
 				8D478BA3170CB3E600DD6121 /* HTSampleFieldsTableViewController.m in Sources */,
 				8D478BA6170CC38000DD6121 /* HTAutocompleteManager.m in Sources */,
-				1FAE0C291739AA7300AAD3C1 /* HTWatcher.m in Sources */,
-				1FAE0C2A1739AA7300AAD3C1 /* NSObject+HTWatcher.m in Sources */,
-				1FAE0C2B1739AA7300AAD3C1 /* UIView+HTUpdateAggregator.m in Sources */,
-				1FAE0C2C1739AA7300AAD3C1 /* UIViewController+HTUpdateAggregator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
