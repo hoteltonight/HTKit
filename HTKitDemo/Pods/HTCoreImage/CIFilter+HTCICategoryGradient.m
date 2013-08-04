@@ -39,7 +39,7 @@
     CIFilter *filter = [CIFilter filterWithName:@"CILinearGradient"];
     [filter setDefaults];
     [filter setValue:[CIVector vectorWithCGPoint:point0] forKey:@"inputPoint0"];
-    [filter setValue:[CIVector vectorWithCGPoint:point0] forKey:@"inputPoint1"];
+    [filter setValue:[CIVector vectorWithCGPoint:point1] forKey:@"inputPoint1"];
     [filter setValue:[CIColor colorWithCGColor:color0.CGColor] forKey:@"inputColor0"];
     [filter setValue:[CIColor colorWithCGColor:color1.CGColor] forKey:@"inputColor1"];
     return filter;

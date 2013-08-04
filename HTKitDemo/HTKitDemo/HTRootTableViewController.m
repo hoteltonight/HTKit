@@ -17,12 +17,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!indexPath.row)
+    UIStoryboard *storyboard;
+    
+    if (indexPath.row == 0)
     {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"HTAutocompleteTextFieldDemo" bundle:nil];
+        storyboard = [UIStoryboard storyboardWithName:@"HTAutocompleteTextFieldDemo" bundle:nil];
         UINavigationController *navigationController = [storyboard instantiateInitialViewController];
         UIViewController *viewController = navigationController.viewControllers[0];
         [self.navigationController pushViewController:viewController animated:YES];
+    }
+    else if (indexPath.row == 6)
+    {
+        storyboard = [UIStoryboard storyboardWithName:@"HTCopyableLabelDemo" bundle:nil];
+        UITabBarController *tabController = [storyboard instantiateInitialViewController];
+        [self.navigationController pushViewController:tabController animated:YES];
     }
 }
 

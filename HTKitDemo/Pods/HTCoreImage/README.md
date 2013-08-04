@@ -3,20 +3,20 @@ HTCoreImage
 
 HTCoreImage is a collection of convenience categories for Core Image.  There are convenience constructors for __every filter__, annotated with NS_AVAILABLE_SINCE() macros so you know what's in iOS 5 vs iOS 6.
 
-### Example:  Let's increase the contrast on an image and colorize it blue, processing on a background queue:
+#### Example:  Let's increase the contrast on an image and colorize it blue:
 
 ```objc
     UIImage *sourceUIImage = [UIImage imageNamed:@"asdf"];
 
     [[[sourceUIImage toCIImage] imageByApplyingFilters:@[
-      [CIFilter filterColorControlsSaturation:1 brightness:1 contrast:1],
+      [CIFilter filterColorControlsSaturation:1 brightness:1 contrast:2],
       [CIFilter filterColorMatrixWithRed:0.5 green:0.5 blue:1 alpha:1]]]
      processToUIImageCompletion:^(UIImage *uiImage) {
         NSLog(@"%@", uiImage);
     }];
 ```
 
-### Here's the same thing with stock Core Image for comparison:
+#### Here's the same thing with stock Core Image for comparison:
 
 ```objc
     UIImage *sourceUIImage = [UIImage imageNamed:@"asdf"];
@@ -55,6 +55,13 @@ HTCoreImage is a collection of convenience categories for Core Image.  There are
                    });
 ```
 
+## Installation
+
+The recommended installation method is cocoapods. Add this line to your Podfile:
+
+    pod 'HTCoreImage'
+
+http://cocoapods.org
 
 ## Contributions welcome!
 
@@ -64,9 +71,9 @@ Tweet the author @jakejennings, and check out HotelTonight's engineering blog: h
 
 Also, check out HotelTonight's other iOS open source:
 * https://github.com/hoteltonight/HTAutocompleteTextField
+* https://github.com/hoteltonight/HTRasterView
 * https://github.com/hoteltonight/HTKit
 * https://github.com/hoteltonight/HTGradientEasing
-* https://github.com/hoteltonight/HTStateAwareRasterImageView
 * https://github.com/hoteltonight/HTDelegateProxy
 * https://github.com/hoteltonight/HTCoreImage
 

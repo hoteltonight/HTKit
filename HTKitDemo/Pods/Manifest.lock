@@ -1,7 +1,8 @@
 PODS:
   - AHEasing (1.1)
-  - HTAutocompleteTextField (1.1.2)
-  - HTCoreImage (1.0.0)
+  - HTAutocompleteTextField (1.1.3)
+  - HTCopyableLabel (0.0.3)
+  - HTCoreImage (1.0.1)
   - HTDelegateProxy (1.0.1)
   - HTGradientEasing (0.0.4):
     - AHEasing
@@ -14,11 +15,12 @@ PODS:
     - SFObservers
   - JJCachedAsyncViewDrawing (1.0.1)
   - SFObservers (1.0)
-  - UIColor-CrossFade (0.0.1)
+  - UIColor-CrossFade (1.0.0)
   - UIViewPlusPosition (0.0.1)
 
 DEPENDENCIES:
   - HTAutocompleteTextField
+  - HTCopyableLabel
   - HTCoreImage
   - HTDelegateProxy
   - HTGradientEasing
@@ -30,8 +32,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AHEasing: b9a02ca67d0d663e2a8b83fd24fa8c2ecc5ddf9b
-  HTAutocompleteTextField: 69eaa27fb32f44a2dcda8c969863a2aa79504d1b
-  HTCoreImage: 0f2c25b4a10735db81c5c1c691159f3b33e6529a
+  HTAutocompleteTextField: b1406558a3579e80a5d04bf00882c2e5ad1a12a2
+  HTCopyableLabel: b8b0b5732779decd6823cbf96d5df350ef08b6fe
+  HTCoreImage: 1137d94efdd8582bea7fd36aead934f9e831be08
   HTDelegateProxy: b262d788cde6215894167632e4bde7720def53db
   HTGradientEasing: e764de9c1790b8957f8987fb543246a76ea06bc4
   HTGraphics: ef88df993f4a42189f05213be11ed648c3535481
@@ -39,7 +42,7 @@ SPEC CHECKSUMS:
   HTUpdateAggregator: d68724ffbb6621f5b92bc48f9c33d64e608f48af
   JJCachedAsyncViewDrawing: e1bd4da8b958213c83c25418ba5f480f650322c0
   SFObservers: c73182a89feb75caec41f78c65d6ca00149c7e75
-  UIColor-CrossFade: afd26f1e60caa96184b0e894736b38039507c46e
+  UIColor-CrossFade: c5554ad5fcc429b5cef440ebea469927dbf33cac
   UIViewPlusPosition: b456af499d3525c3566d5d96d93e56d9facde440
 
-COCOAPODS: 0.17.2
+COCOAPODS: 0.22.3
