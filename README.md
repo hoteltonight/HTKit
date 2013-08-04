@@ -1,7 +1,7 @@
 HTKit
 =====
 
-#### HTKit is a collection of 7 podspecs published by the HotelTonight iOS team:
+#### HTKit is a collection of 8 podspecs published by the HotelTonight iOS team:
 
 * [HTAutocompleteTextField](https://github.com/hoteltonight/HTAutocompleteTextField) is a subclass of UITextField that automatically displays text suggestions in real-time.
 
@@ -17,6 +17,8 @@ HTKit
 
 * [HTUpdateAggregator](https://github.com/hoteltonight/HTUpdateAggregator) improves update logic in NSObject/UIView/UIViewController subclasses.
 
+* [HTCopyableLabel](https://github.com/hoteltonight/HTCopyableLabel) is a subclass of UILabel that makes it easy to allow users to copy a label's text.
+
 This project serves as a collection podspec and a centralized demo project for our published code.  If you don't use cocoapods, refer to the individual repos above for installation.
 
 ## Installation
@@ -30,4 +32,4 @@ pod 'HTKit'
 
 ## Use it? Love/hate it?
 
-Tweet the authors @jakejennings, @jonsibs, @raylillywhite and @andylavoy, and check out HotelTonight's engineering blog: http://engineering.hoteltonight.com
+Tweet the authors [@jakej](https://twitter.com/jakej), [@jonsibs](https://twitter.com/jonsibs), [@raylillywhite](https://twitter.com/RayLillywhite) and [@lavoy](https://twitter.com/lavoy), and check out HotelTonight's engineering blog: http://engineering.hoteltonight.com
