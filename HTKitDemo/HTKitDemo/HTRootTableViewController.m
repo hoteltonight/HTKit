@@ -17,10 +17,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"HTAutocompleteTextFieldDemo" bundle:nil];
-    UINavigationController *navigationController = [storyboard instantiateInitialViewController];
-    UIViewController *viewController = navigationController.viewControllers[0];
-    [self.navigationController pushViewController:viewController animated:YES];
+    if (indexPath.row == 0)
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"HTAutocompleteTextFieldDemo" bundle:nil];
+        UINavigationController *navigationController = [storyboard instantiateInitialViewController];
+        UIViewController *viewController = navigationController.viewControllers[0];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
 }
 
 @end
