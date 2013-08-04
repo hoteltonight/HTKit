@@ -1,0 +1,1 @@
+../../HTCoreImage/CIFilter+HTCICategoryCompositeOperation.h

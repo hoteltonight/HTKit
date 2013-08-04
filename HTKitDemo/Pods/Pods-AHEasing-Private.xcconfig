@@ -1,5 +1,5 @@
 #include "Pods-AHEasing.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AHEasing" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AHEasing" "${PODS_ROOT}/Headers/HTAutocompleteTextField" "${PODS_ROOT}/Headers/HTCopyableLabel" "${PODS_ROOT}/Headers/HTDelegateProxy" "${PODS_ROOT}/Headers/HTGradientEasing" "${PODS_ROOT}/Headers/HTRasterView" "${PODS_ROOT}/Headers/JJCachedAsyncViewDrawing" "${PODS_ROOT}/Headers/SFObservers" "${PODS_ROOT}/Headers/UIColor-CrossFade" "${PODS_ROOT}/Headers/UIViewPlusPosition"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AHEasing" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AHEasing" "${PODS_ROOT}/Headers/HTAutocompleteTextField" "${PODS_ROOT}/Headers/HTCopyableLabel" "${PODS_ROOT}/Headers/HTCoreImage" "${PODS_ROOT}/Headers/HTDelegateProxy" "${PODS_ROOT}/Headers/HTGradientEasing" "${PODS_ROOT}/Headers/HTGraphics" "${PODS_ROOT}/Headers/HTRasterView" "${PODS_ROOT}/Headers/HTUpdateAggregator" "${PODS_ROOT}/Headers/JJCachedAsyncViewDrawing" "${PODS_ROOT}/Headers/SFObservers" "${PODS_ROOT}/Headers/UIColor-CrossFade" "${PODS_ROOT}/Headers/UIViewPlusPosition"
 OTHER_LDFLAGS = -ObjC ${PODS_AHEASING_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}

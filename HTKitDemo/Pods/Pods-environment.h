@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_HTCopyableLabel 0
 #define COCOAPODS_VERSION_PATCH_HTCopyableLabel 3
 
+// HTCoreImage
+#define COCOAPODS_POD_AVAILABLE_HTCoreImage
+#define COCOAPODS_VERSION_MAJOR_HTCoreImage 1
+#define COCOAPODS_VERSION_MINOR_HTCoreImage 0
+#define COCOAPODS_VERSION_PATCH_HTCoreImage 1
+
 // HTDelegateProxy
 #define COCOAPODS_POD_AVAILABLE_HTDelegateProxy
 #define COCOAPODS_VERSION_MAJOR_HTDelegateProxy 1
@@ -36,11 +42,23 @@
 #define COCOAPODS_VERSION_MINOR_HTGradientEasing 0
 #define COCOAPODS_VERSION_PATCH_HTGradientEasing 4
 
+// HTGraphics
+#define COCOAPODS_POD_AVAILABLE_HTGraphics
+#define COCOAPODS_VERSION_MAJOR_HTGraphics 1
+#define COCOAPODS_VERSION_MINOR_HTGraphics 0
+#define COCOAPODS_VERSION_PATCH_HTGraphics 0
+
 // HTRasterView
 #define COCOAPODS_POD_AVAILABLE_HTRasterView
 #define COCOAPODS_VERSION_MAJOR_HTRasterView 1
 #define COCOAPODS_VERSION_MINOR_HTRasterView 2
 #define COCOAPODS_VERSION_PATCH_HTRasterView 9
+
+// HTUpdateAggregator
+#define COCOAPODS_POD_AVAILABLE_HTUpdateAggregator
+#define COCOAPODS_VERSION_MAJOR_HTUpdateAggregator 1
+#define COCOAPODS_VERSION_MINOR_HTUpdateAggregator 0
+#define COCOAPODS_VERSION_PATCH_HTUpdateAggregator 0
 
 // JJCachedAsyncViewDrawing
 #define COCOAPODS_POD_AVAILABLE_JJCachedAsyncViewDrawing

@@ -1,0 +1,1 @@
+../../HTUpdateAggregator/NSObject+HTWatcher.h

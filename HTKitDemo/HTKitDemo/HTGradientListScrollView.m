@@ -30,22 +30,33 @@ static CGFloat const kGradientHeight = 80;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.showsVerticalScrollIndicator = YES;
-        self.gradientLayers = [NSMutableArray array];
-        self.gradientNameLabels = [NSMutableArray array];
-        [self createAndAddGradientWithEasingFunction:LinearInterpolation name:@"LinearInterpolation"];
-        [self createAndAddGradientWithEasingFunction:QuadraticEaseOut name:@"QuadraticEaseOut"];
-        [self createAndAddGradientWithEasingFunction:CubicEaseInOut name:@"CubicEaseInOut"];
-        [self createAndAddGradientWithEasingFunction:QuarticEaseInOut name:@"QuarticEaseInOut"];
-        [self createAndAddGradientWithEasingFunction:QuinticEaseInOut name:@"QuinticEaseInOut"];
-        [self createAndAddGradientWithEasingFunction:SineEaseInOut name:@"SineEaseInOut"];
-        [self createAndAddGradientWithEasingFunction:CircularEaseInOut name:@"CircularEaseInOut"];
-        [self createAndAddGradientWithEasingFunction:ExponentialEaseInOut name:@"ExponentialEaseInOut"];
-        [self createAndAddGradientWithEasingFunction:ElasticEaseInOut name:@"ElasticEaseInOut"];
-        [self createAndAddGradientWithEasingFunction:BackEaseInOut name:@"BackEaseInOut"];
-        [self createAndAddGradientWithEasingFunction:BounceEaseInOut name:@"BounceEaseInOut"];
+        [self sharedInit];
     }
     return self;
+}
+
+- (void)awakeFromNib
+{
+    [self sharedInit];
+}
+
+- (void)sharedInit
+{
+    self.backgroundColor = [UIColor blackColor];
+    self.showsVerticalScrollIndicator = YES;
+    self.gradientLayers = [NSMutableArray array];
+    self.gradientNameLabels = [NSMutableArray array];
+    [self createAndAddGradientWithEasingFunction:LinearInterpolation name:@"LinearInterpolation"];
+    [self createAndAddGradientWithEasingFunction:SineEaseInOut name:@"SineEaseInOut"];
+    [self createAndAddGradientWithEasingFunction:QuadraticEaseOut name:@"QuadraticEaseOut"];
+    [self createAndAddGradientWithEasingFunction:CubicEaseInOut name:@"CubicEaseInOut"];
+    [self createAndAddGradientWithEasingFunction:QuarticEaseInOut name:@"QuarticEaseInOut"];
+    [self createAndAddGradientWithEasingFunction:QuinticEaseInOut name:@"QuinticEaseInOut"];
+    [self createAndAddGradientWithEasingFunction:CircularEaseInOut name:@"CircularEaseInOut"];
+    [self createAndAddGradientWithEasingFunction:ExponentialEaseInOut name:@"ExponentialEaseInOut"];
+    [self createAndAddGradientWithEasingFunction:ElasticEaseInOut name:@"ElasticEaseInOut"];
+    [self createAndAddGradientWithEasingFunction:BackEaseInOut name:@"BackEaseInOut"];
+    [self createAndAddGradientWithEasingFunction:BounceEaseInOut name:@"BounceEaseInOut"];
 }
 
 - (CAGradientLayer *)createAndAddGradientWithEasingFunction:(AHEasingFunction)easingFunction name:(NSString *)name

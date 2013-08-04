@@ -1,0 +1,1 @@
+../../HTCoreImage/HTCoreImage.h
