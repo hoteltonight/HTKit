@@ -1,7 +1,4 @@
-ALWAYS_SEARCH_USER_PATHS = YES
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AHEasing" "${PODS_ROOT}/Headers/HTAutocompleteTextField" "${PODS_ROOT}/Headers/HTCopyableLabel" "${PODS_ROOT}/Headers/HTDelegateProxy" "${PODS_ROOT}/Headers/HTGradientEasing" "${PODS_ROOT}/Headers/HTRasterView" "${PODS_ROOT}/Headers/JJCachedAsyncViewDrawing" "${PODS_ROOT}/Headers/SFObservers" "${PODS_ROOT}/Headers/UIColor-CrossFade" "${PODS_ROOT}/Headers/UIViewPlusPosition"
 OTHER_LDFLAGS = -ObjC -framework CoreGraphics -framework Foundation -framework QuartzCore
-HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS}
 PODS_ROOT = ${SRCROOT}/Pods
-PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AHEasing" "${PODS_ROOT}/BuildHeaders/HTAutocompleteTextField" "${PODS_ROOT}/BuildHeaders/HTDelegateProxy" "${PODS_ROOT}/BuildHeaders/HTGradientEasing" "${PODS_ROOT}/BuildHeaders/HTRasterView" "${PODS_ROOT}/BuildHeaders/JJCachedAsyncViewDrawing" "${PODS_ROOT}/BuildHeaders/SFObservers" "${PODS_ROOT}/BuildHeaders/UIColor-CrossFade" "${PODS_ROOT}/BuildHeaders/UIViewPlusPosition"
-PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AHEasing" "${PODS_ROOT}/Headers/HTAutocompleteTextField" "${PODS_ROOT}/Headers/HTDelegateProxy" "${PODS_ROOT}/Headers/HTGradientEasing" "${PODS_ROOT}/Headers/HTRasterView" "${PODS_ROOT}/Headers/JJCachedAsyncViewDrawing" "${PODS_ROOT}/Headers/SFObservers" "${PODS_ROOT}/Headers/UIColor-CrossFade" "${PODS_ROOT}/Headers/UIViewPlusPosition"
-PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}

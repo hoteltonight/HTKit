@@ -13,26 +13,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSObject+HTPropertyHash.h"
+
+@class HTRasterView;
 
 typedef void (^HTSARIVVoidBlock)();
 
-@protocol HTRasterizableView <NSObject>
-
-- (NSArray *)keyPathsThatAffectState;
+@protocol HTRasterizableView <HTStateTrackable, NSObject>
 
 @optional
 - (UIEdgeInsets)capEdgeInsets;
 
-// YES means 1pt between caps vertically and horizontally for draw size.  capEdgeInsets must be implemented for this.
-- (BOOL)useMinimumFrameForCaps;
-
-- (BOOL)shouldRegenerateRasterForKeyPath:(NSString *)keyPath change:(NSDictionary *)dictionary;
-
+- (BOOL)useMinimumFrameForCaps; // YES means 1pt between caps vertically and horizontally for draw size.  capEdgeInsets must be implemented for this.
+- (BOOL)shouldRegenerateRaster;
 - (UIBezierPath *)rasterViewShadowPathForBounds:(CGRect)bounds;
+- (UIImage *)placeholderImage;
 
 @end
 
-@class HTRasterView;
 @protocol HTRasterViewDelegate <NSObject>
 
 @optional
@@ -45,13 +43,13 @@ typedef void (^HTSARIVVoidBlock)();
 
 @property (nonatomic, strong) UIView<HTRasterizableView> *rasterizableView;
 @property (nonatomic, assign) BOOL drawsOnMainThread;
-@property (atomic, assign) id<HTRasterViewDelegate> delegate;
+@property (atomic, weak) id<HTRasterViewDelegate> delegate;
 @property (nonatomic, assign) BOOL rasterized; // Default YES, change to NO to add rasterizableView as a subview
 @property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, assign, readonly) BOOL loaded; // When drawsOnMainThread = NO, this will return YES if the current state is rendered
 
 - (NSString *)cacheKey;
-- (void)registerDescendantRasterView:(HTRasterView *)descendant;
-- (void)unregisterDescendantRasterView:(HTRasterView *)descendant;
+- (void)generatePlaceholder;
 
 // For prerendering only
 @property (nonatomic, assign) BOOL kvoEnabled;

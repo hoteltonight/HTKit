@@ -8,13 +8,15 @@
 
 // Modified by Jacob Jennings
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "MSCachedAsyncViewDrawing.h"
 
-@interface MSCachedAsyncViewDrawing ()
+//#define MSCachedAsyncViewDrawingDebug 1
+
+@interface MSCachedAsyncViewDrawing () <NSCacheDelegate>
 
 @property (nonatomic, strong) NSCache *cache;
-
-@property (nonatomic, strong) NSOperationQueue *operationQueue;
+@property (nonatomic, assign) NSUInteger numberOfImagesInCache;
 
 @end
 
@@ -33,7 +35,7 @@ typedef void (^MSCachedAsyncViewDrawingOperationBlock)(_MSViewDrawingOperation *
 + (_MSViewDrawingOperation *)viewDrawingBlockOperationWithBlock:(MSCachedAsyncViewDrawingOperationBlock)operationBlock
 {
     _MSViewDrawingOperation *operation = [[self alloc] init];
-    
+    operation.threadPriority = 0.5;
     __unsafe_unretained _MSViewDrawingOperation *weakOperation = operation;
     
     [operation addExecutionBlock:^{
@@ -54,6 +56,7 @@ static NSOperationQueue *_sharedOperationQueue = nil;
     if ([self class] == [MSCachedAsyncViewDrawing class])
     {
         _sharedOperationQueue = [[NSOperationQueue alloc] init];
+        [_sharedOperationQueue setMaxConcurrentOperationCount:10];
         _sharedOperationQueue.name = @"com.mindsnacks.view_drawing.queue";
     }
 }
@@ -76,7 +79,10 @@ static NSOperationQueue *_sharedOperationQueue = nil;
     {
         self.cache = [[NSCache alloc] init];
         self.cache.name = @"com.mindsnacks.view_drawing.cache";
+        self.cache.delegate = self;
         self.operationQueue = _sharedOperationQueue;
+        self.numberOfImagesInCache = 0;
+        self.totalCostLimitInMegabytes = 50;
     }
     
     return self;
@@ -108,13 +114,13 @@ static NSOperationQueue *_sharedOperationQueue = nil;
 
 {
     UIImage *cachedImage = [self.cache objectForKey:cacheKey];
-    
+
     if (cachedImage)
     {
         completionBlock(cachedImage);
         return nil;
     }
-    
+
     MSCachedAsyncViewDrawingDrawBlock heapDrawBlock = [drawBlock copy];
     MSCachedAsyncViewDrawingCompletionBlock heapCompletionBlock = [completionBlock copy];
     
@@ -126,10 +132,17 @@ static NSOperationQueue *_sharedOperationQueue = nil;
         
         CGFloat contentsScale = [[UIScreen mainScreen] scale];
         CGSize size = CGSizeMake(imageSize.width * contentsScale, imageSize.height * contentsScale);
-        
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-        CGContextRef context = CGBitmapContextCreate(NULL, size.width, size.height, 8, 0, colorSpace, kCGImageAlphaPremultipliedLast);
-        
+
+        CGColorSpaceRef colorSpace =  CGColorSpaceCreateDeviceRGB();;
+        size_t components = 4;
+        size_t width = size.width;
+        size_t height = size.height;
+        size_t bitsPerComponent = 8;
+        size_t bytesPerRow = (width * bitsPerComponent * components + 7)/8;
+        size_t dataLength = bytesPerRow * height;
+
+        CGContextRef context = CGBitmapContextCreate(NULL, size.width, size.height, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
+
         CGContextScaleCTM(context, contentsScale, contentsScale);
         CGAffineTransform flipVertical = CGAffineTransformTranslate(CGAffineTransformMakeScale(1, -1), 0, -imageSize.height);
         CGContextConcatCTM(context, flipVertical);
@@ -155,16 +168,9 @@ static NSOperationQueue *_sharedOperationQueue = nil;
             CGContextRestoreGState(context);
         }
         
-        heapDrawBlock(rectToDraw, context);
+        BOOL shouldContinue = heapDrawBlock(rectToDraw, context);
         
-        if (operation.isCancelled)
-        {
-            CGColorSpaceRelease(colorSpace);
-            CGContextRelease(context);
-            return;
-        }
-        
-        if (operation.isCancelled)
+        if (operation.isCancelled || !shouldContinue)
         {
             CGColorSpaceRelease(colorSpace);
             CGContextRelease(context);
@@ -181,10 +187,11 @@ static NSOperationQueue *_sharedOperationQueue = nil;
         
         CGColorSpaceRelease(colorSpace);
         CGContextRelease(context);
-        CFRelease(imageRef);
-        
-        [self.cache setObject:resultImage forKey:cacheKey];
-        
+        CGImageRelease(imageRef);
+
+        [self.cache setObject:resultImage forKey:cacheKey cost:dataLength];
+        self.numberOfImagesInCache++;
+
         operation.resultImage = resultImage;
     };
     
@@ -226,6 +233,23 @@ static NSOperationQueue *_sharedOperationQueue = nil;
     }
     
     return (alpha == 1.0f);
+}
+
+#pragma mark - Cache Delegate
+
+- (void)cache:(NSCache *)cache willEvictObject:(id)obj
+{
+#if MSCachedAsyncViewDrawingDebug
+    UIImage *image = (UIImage *)obj;
+    NSLog(@"Evicted image of size %@! Remaining images: %u", NSStringFromCGSize(image.size), self.numberOfImagesInCache);
+    self.numberOfImagesInCache--;
+#endif
+}
+
+- (void)setTotalCostLimitInMegabytes:(CGFloat)totalCostLimitInMegabytes
+{
+    _totalCostLimitInMegabytes = totalCostLimitInMegabytes;
+    self.cache.totalCostLimit = self.totalCostLimitInMegabytes * 1024 * 1024; // megabytes * mb/kb * kb/b
 }
 
 @end

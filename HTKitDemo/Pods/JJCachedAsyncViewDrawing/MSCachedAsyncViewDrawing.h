@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^MSCachedAsyncViewDrawingDrawBlock)(CGRect frame, CGContextRef context);
+typedef BOOL (^MSCachedAsyncViewDrawingDrawBlock)(CGRect frame, CGContextRef context);
 typedef void (^MSCachedAsyncViewDrawingCompletionBlock)(UIImage *drawnImage);
 
 @interface MSCachedAsyncViewDrawing : NSObject
@@ -17,6 +17,9 @@ typedef void (^MSCachedAsyncViewDrawingCompletionBlock)(UIImage *drawnImage);
  * @discussion you can use the shared instance to have a shared cache.
  */
 + (MSCachedAsyncViewDrawing *)sharedInstance;
+
+@property (nonatomic, strong) NSOperationQueue *operationQueue;
+@property (nonatomic, assign) CGFloat totalCostLimitInMegabytes;
 
 /**
  * @discussion this method will call `drawBlock` _on a background thread_ passing a CGRect that you can pass to a `drawRect:` method

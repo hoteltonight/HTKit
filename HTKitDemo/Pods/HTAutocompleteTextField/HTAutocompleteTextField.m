@@ -51,7 +51,14 @@ static NSObject<HTAutocompleteDataSource> *DefaultAutocompleteDataSource = nil;
     self.autocompleteLabel.font = self.font;
     self.autocompleteLabel.backgroundColor = [UIColor clearColor];
     self.autocompleteLabel.textColor = [UIColor lightGrayColor];
-    self.autocompleteLabel.lineBreakMode = UILineBreakModeClip;
+    
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 60000
+    NSLineBreakMode lineBreakMode = NSLineBreakByClipping;
+#else
+    UILineBreakMode lineBreakMode = UILineBreakModeClip;
+#endif
+    
+    self.autocompleteLabel.lineBreakMode = lineBreakMode;
     self.autocompleteLabel.hidden = YES;
     [self addSubview:self.autocompleteLabel];
     [self bringSubviewToFront:self.autocompleteLabel];
@@ -92,22 +99,22 @@ static NSObject<HTAutocompleteDataSource> *DefaultAutocompleteDataSource = nil;
 
 #pragma mark - UIResponder
 
-//- (BOOL)becomeFirstResponder
-//{
-//    // This is necessary because the textfield avoids tapping the autocomplete Button
-//    [self bringSubviewToFront:self.autocompleteButton];
-//    if (!self.autocompleteDisabled)
-//    {
-//        if ([self clearsOnBeginEditing])
-//        {
-//            self.autocompleteLabel.text = @"";
-//        }
-//        
-//        self.autocompleteLabel.hidden = NO;
-//    }
-//    
-//    return [super becomeFirstResponder];
-//}
+- (BOOL)becomeFirstResponder
+{
+    // This is necessary because the textfield avoids tapping the autocomplete Button
+    [self bringSubviewToFront:self.autocompleteButton];
+    if (!self.autocompleteDisabled)
+    {
+        if ([self clearsOnBeginEditing])
+        {
+            self.autocompleteLabel.text = @"";
+        }
+        
+        self.autocompleteLabel.hidden = NO;
+    }
+    
+    return [super becomeFirstResponder];
+}
 
 - (BOOL)resignFirstResponder
 {
@@ -134,13 +141,19 @@ static NSObject<HTAutocompleteDataSource> *DefaultAutocompleteDataSource = nil;
     CGRect returnRect = CGRectZero;
     CGRect textRect = [self textRectForBounds:self.bounds];
     
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 60000
+    NSLineBreakMode lineBreakMode = NSLineBreakByCharWrapping;
+#else
+    UILineBreakMode lineBreakMode = UILineBreakModeCharacterWrap;
+#endif
+    
     CGSize prefixTextSize = [self.text sizeWithFont:self.font
                                   constrainedToSize:textRect.size
-                                      lineBreakMode:UILineBreakModeCharacterWrap];
+                                      lineBreakMode:lineBreakMode];
     
     CGSize autocompleteTextSize = [self.autocompleteString sizeWithFont:self.font
                                                       constrainedToSize:CGSizeMake(textRect.size.width-prefixTextSize.width, textRect.size.height)
-                                                          lineBreakMode:UILineBreakModeCharacterWrap];
+                                                          lineBreakMode:lineBreakMode];
     
     returnRect = CGRectMake(textRect.origin.x + prefixTextSize.width + self.autocompleteTextOffset.x,
                             textRect.origin.y + self.autocompleteTextOffset.y,
@@ -222,7 +235,7 @@ static NSObject<HTAutocompleteDataSource> *DefaultAutocompleteDataSource = nil;
     [self updateAutocompleteButtonAnimated:YES];
 }
 
-- (void)setShowAutocompleteButton:(BOOL *)showAutocompleteButton
+- (void)setShowAutocompleteButton:(BOOL)showAutocompleteButton
 {
     _showAutocompleteButton = showAutocompleteButton;
 
