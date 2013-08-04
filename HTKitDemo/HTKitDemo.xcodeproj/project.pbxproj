@@ -48,6 +48,9 @@
 		85C7D86E793F28934E1F1510 /* HTCarSwitcherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C7D56A0002E24833405534 /* HTCarSwitcherView.m */; };
 		85C7D9A0E1B9F32B22A9E756 /* HTCarSwitcherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C7D1D6B79504C258C49A2A /* HTCarSwitcherViewController.m */; };
 		85C7DB795A4AD479329B5B3B /* HTWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C7D5372A6201A7C6BA7022 /* HTWatcher.m */; };
+		8D0002D817AE06B300BDFF37 /* HTPasteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0002D417AE06B300BDFF37 /* HTPasteViewController.m */; };
+		8D0002D917AE06B300BDFF37 /* HTCopyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0002D617AE06B300BDFF37 /* HTCopyViewController.m */; };
+		8D0002E217AE076300BDFF37 /* HTCopyableLabelDemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0002E117AE076300BDFF37 /* HTCopyableLabelDemo.storyboard */; };
 		8D478BA3170CB3E600DD6121 /* HTSampleFieldsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D478BA2170CB3E600DD6121 /* HTSampleFieldsTableViewController.m */; };
 		8D478BA6170CC38000DD6121 /* HTAutocompleteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D478BA5170CC38000DD6121 /* HTAutocompleteManager.m */; };
 		8DDEAA51170CAE0D00F82D0E /* HTRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDEAA50170CAE0D00F82D0E /* HTRootTableViewController.m */; };
@@ -135,6 +138,11 @@
 		85C7DE5D4A4C5315366B997A /* HTCarDetailsViewV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCarDetailsViewV2.h; sourceTree = "<group>"; };
 		85C7DEE5215BC3C18F246C12 /* HTCarDetailsViewV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCarDetailsViewV2.m; sourceTree = "<group>"; };
 		85C7DF74DCBF497AD3CDD458 /* HTCarSwitcherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCarSwitcherViewController.h; sourceTree = "<group>"; };
+		8D0002D317AE06B300BDFF37 /* HTPasteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPasteViewController.h; sourceTree = "<group>"; };
+		8D0002D417AE06B300BDFF37 /* HTPasteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPasteViewController.m; sourceTree = "<group>"; };
+		8D0002D517AE06B300BDFF37 /* HTCopyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCopyViewController.h; sourceTree = "<group>"; };
+		8D0002D617AE06B300BDFF37 /* HTCopyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCopyViewController.m; sourceTree = "<group>"; };
+		8D0002E117AE076300BDFF37 /* HTCopyableLabelDemo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTCopyableLabelDemo.storyboard; sourceTree = "<group>"; };
 		8D478BA1170CB3E600DD6121 /* HTSampleFieldsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSampleFieldsTableViewController.h; sourceTree = "<group>"; };
 		8D478BA2170CB3E600DD6121 /* HTSampleFieldsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSampleFieldsTableViewController.m; sourceTree = "<group>"; };
 		8D478BA4170CC38000DD6121 /* HTAutocompleteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAutocompleteManager.h; sourceTree = "<group>"; };
@@ -203,6 +211,7 @@
 				85C7D6FB23E78EEC3F59D7C9 /* HTKit */,
 				1F93B07E16FEA1000028BAC7 /* HTStateAwareRasterImageView */,
 				1F93B07716FE94450028BAC7 /* HTGradientEasing */,
+				8D0002D017AE06B300BDFF37 /* HTCopyableLabelDemo */,
 				1F1CF77116FE66FE004B0218 /* HTAppDelegate.h */,
 				1F1CF77216FE66FE004B0218 /* HTAppDelegate.m */,
 				1F1CF77A16FE66FE004B0218 /* HTViewController.h */,
@@ -331,6 +340,18 @@
 			name = HTKit;
 			sourceTree = "<group>";
 		};
+		8D0002D017AE06B300BDFF37 /* HTCopyableLabelDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8D0002E117AE076300BDFF37 /* HTCopyableLabelDemo.storyboard */,
+				8D0002D317AE06B300BDFF37 /* HTPasteViewController.h */,
+				8D0002D417AE06B300BDFF37 /* HTPasteViewController.m */,
+				8D0002D517AE06B300BDFF37 /* HTCopyViewController.h */,
+				8D0002D617AE06B300BDFF37 /* HTCopyViewController.m */,
+			);
+			path = HTCopyableLabelDemo;
+			sourceTree = "<group>";
+		};
 		8DDEAA52170CAE1B00F82D0E /* HTAutocompleteTextFieldDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +432,7 @@
 				1F93B09D16FEAAC90028BAC7 /* HTKitDemoStoryboard.storyboard in Resources */,
 				8DDEAA54170CAE2600F82D0E /* HTAutocompleteTextFieldDemo.storyboard in Resources */,
 				8DDEAA57170CAE5500F82D0E /* ht-logo-black.png in Resources */,
+				8D0002E217AE076300BDFF37 /* HTCopyableLabelDemo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +494,8 @@
 				8D478BA6170CC38000DD6121 /* HTAutocompleteManager.m in Sources */,
 				1F782881170CDBC900C2981E /* UIView+HTUpdateAggregator.m in Sources */,
 				1F782884170CDCF400C2981E /* UIViewController+HTUpdateAggregator.m in Sources */,
+				8D0002D817AE06B300BDFF37 /* HTPasteViewController.m in Sources */,
+				8D0002D917AE06B300BDFF37 /* HTCopyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
